@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pygplates cookbook on pygplates test site</title>
+    <title>pygplates cookbook</title>
     <link>https://siwill22.github.io/</link>
-    <description>Recent content in pygplates cookbook on pygplates test site</description>
+    <description>Recent content on pygplates cookbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
 	<atom:link href="https://siwill22.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Extras</title>
+      <link>https://siwill22.github.io/extras/__index.sav/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/extras/__index.sav/</guid>
+      <description>   Italic Block letters       Brune et al, 2017        </description>
+    </item>
+    
+    <item>
+      <title>Gallery</title>
+      <link>https://siwill22.github.io/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/gallery/</guid>
+      <description>Below are some examples of analysis carried out with pygplates. Below each image is a link to a jupyter notebook that illustrates the steps involved for each example. Code and source data can be downloaded for you to try each example yourself.
+   Load CSV Data and Reconstruct Reconstruct Features to Birth Time         View notebook View notebook       Motion Paths Flowlines         View notebook View notebook       Convergence Velocities - Single Point Convergence Velocities - Along Plate Boundaries         View notebook View notebook       Reconstructions with GMT Animations         View notebook View notebook    </description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://siwill22.github.io/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/getting-started/</guid>
+      <description>GPlates is open source software for working with plate tectonic reconstructions
+pygplates is a python API for GPlates. Basically, a python toolbox for coding plate tectonic analysis.
+The purpose of this site is to introduce some of the ways that a GPlates python API could be useful to different communities looking at the Earth through deep time</description>
+    </item>
+    
+    <item>
+      <title>Useful Links</title>
+      <link>https://siwill22.github.io/useful-links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/useful-links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pygplates API</title>
+      <link>https://siwill22.github.io/pygplates-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/pygplates-api/</guid>
+      <description>The docs are here</description>
+    </item>
     
   </channel>
 </rss>

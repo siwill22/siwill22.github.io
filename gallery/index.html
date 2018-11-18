@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>pygplates cookbook</title>
+    <title>Gallery - pygplates cookbook</title>
     <meta name="generator" content="Hugo 0.50" />
 
     
     <meta name="description" content="A material design theme for documentations.">
     
-    <link rel="canonical" href="https://siwill22.github.io/">
+    <link rel="canonical" href="https://siwill22.github.io/gallery/">
     
     <meta name="author" content="Digitalcraftsman">
     
 
-    <meta property="og:url" content="https://siwill22.github.io/">
+    <meta property="og:url" content="https://siwill22.github.io/gallery/">
     <meta property="og:title" content="pygplates cookbook">
     <meta property="og:image" content="https://siwill22.github.io/images/sealevel.jpg">
     <meta name="apple-mobile-web-app-title" content="pygplates cookbook">
@@ -69,9 +69,6 @@
     <script src="https://siwill22.github.io/javascripts/modernizr.js"></script>
 
     
-    <link href="https://siwill22.github.io/index.xml" rel="alternate" type="application/rss+xml" title="pygplates cookbook" />
-    <link href="https://siwill22.github.io/index.xml" rel="feed" type="application/rss+xml" title="pygplates cookbook" />
-    
 
   </head>
   <body class="palette-primary-blue palette-accent-cyan">
@@ -100,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        pygplates cookbook
+        Gallery
       </div>
     </div>
 
@@ -185,11 +182,14 @@
 
 
 
-<a  title="Gallery" href="https://siwill22.github.io/gallery/">
+<a class="current" title="Gallery" href="https://siwill22.github.io/gallery/">
 	
 	Gallery
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
   
@@ -257,14 +257,11 @@
 
 
 
-<a class="current" title="Home" href="https://siwill22.github.io/">
+<a  title="Home" href="https://siwill22.github.io/">
 	
 	Home
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -301,7 +298,94 @@
 
 	<article class="article">
 		<div class="wrapper">
-			
+			<h1>Gallery </h1>
+
+			<p>Below are some examples of analysis carried out with pygplates. Below each image is a link to a <a href="http://jupyter.org/">jupyter notebook</a> that illustrates the steps involved for each example. Code and source data can be downloaded for you to try each example yourself.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Load CSV Data and Reconstruct</th>
+<th align="center">Reconstruct Features to Birth Time</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img src="https://siwill22.github.io/images/csv-import.png" alt="reconstruction" height="220"/></td>
+<td align="center"><img src="https://siwill22.github.io/images/LIP-LLSVP.png" alt="animation" height="220"/></td>
+</tr>
+
+<tr>
+<td align="center"><a href="https://github.com/GPlates/pygplates-tutorials/blob/master/pygplates-assign-plateids.ipynb">View notebook</a></td>
+<td align="center"><a href="https://github.com/GPlates/pygplates-tutorials/blob/master/pygplates-reconstruct-to-birth-time.ipynb">View notebook</a></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center">Motion Paths</th>
+<th align="center">Flowlines</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img src="https://siwill22.github.io/images/motion-path.png" alt="reconstruction" height="300"/></td>
+<td align="center"><img src="https://siwill22.github.io/images/flowline.png" alt="animation" height="300"/></td>
+</tr>
+
+<tr>
+<td align="center"><a href="https://github.com/GPlates/pygplates-tutorials/blob/master/pygplates-Motion-Paths.ipynb">View notebook</a></td>
+<td align="center"><a href="https://github.com/GPlates/pygplates-tutorials/blob/master/pygplates-Flowlines.ipynb">View notebook</a></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center">Convergence Velocities - Single Point</th>
+<th align="center">Convergence Velocities - Along Plate Boundaries</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img src="https://siwill22.github.io/images/point-convergence.png" alt="reconstruction" height="250"/></td>
+<td align="center"><img src="https://siwill22.github.io/images/boundary-convergence.png" alt="animation" height="250"/></td>
+</tr>
+
+<tr>
+<td align="center"><a href="https://github.com/siwill22/pygplates-recipes/blob/master/velocity/convergence-for-point.ipynb">View notebook</a></td>
+<td align="center"><a href="https://github.com/siwill22/pygplates-recipes/blob/master/velocity/https://github.com/siwill22/pygplates-recipes/blob/master/velocity/convergence-along-boundaries.ipynb">View notebook</a></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="center">Reconstructions with GMT</th>
+<th align="center">Animations</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img src="https://siwill22.github.io/images/gmtplot.png" alt="reconstruction" height="200"/></td>
+<td align="center"><img src="https://siwill22.github.io/images/PlateReconstruction.gif" alt="animation" height="225"/></td>
+</tr>
+
+<tr>
+<td align="center"><a href="https://github.com/siwill22/pygplates-recipes/blob/master/visualisation/GMT-plots.ipynb">View notebook</a></td>
+<td align="center"><a href="https://github.com/siwill22/pygplates-recipes/blob/master/visualisation/animation-with-matplotlib.ipynb">View notebook</a></td>
+</tr>
+</tbody>
+</table>
+
 
 			<aside class="copyright" role="note">
 				
@@ -316,23 +400,37 @@
 			<footer class="footer">
 				
 
-
-
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
+  
+      <a href="https://siwill22.github.io/extras/__index.sav/" title="Extras">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Extras
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
-  
-  
   <div class="next">
-      <a href="https://siwill22.github.io/extras/" title="Extras">
+  
+      <a href="https://siwill22.github.io/getting-started/" title="Getting Started">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Extras
+              Getting Started
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
@@ -340,8 +438,11 @@
           </div>
         </div>
       </a>
+  
   </div>
 </nav>
+
+
 
 
 
