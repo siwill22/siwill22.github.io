@@ -21,16 +21,20 @@
   </url>
   
   <url>
-    <loc>https://siwill22.github.io/getting-started/</loc>
-  </url>
-  
-  <url>
     <loc>https://siwill22.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://siwill22.github.io/tutorials/</loc>
+  </url>
+  
+  <url>
     <loc>https://siwill22.github.io/useful-links/</loc>
+  </url>
+  
+  <url>
+    <loc>https://siwill22.github.io/what-is-pygplates/</loc>
   </url>
   
   <url>

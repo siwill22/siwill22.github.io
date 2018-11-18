@@ -30,14 +30,12 @@
     </item>
     
     <item>
-      <title>Getting Started</title>
-      <link>https://siwill22.github.io/getting-started/</link>
+      <title>Tutorials</title>
+      <link>https://siwill22.github.io/tutorials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://siwill22.github.io/getting-started/</guid>
-      <description>GPlates is open source software for working with plate tectonic reconstructions
-pygplates is a python API for GPlates. Basically, a python toolbox for coding plate tectonic analysis.
-The purpose of this site is to introduce some of the ways that a GPlates python API could be useful to different communities looking at the Earth through deep time</description>
+      <guid>https://siwill22.github.io/tutorials/</guid>
+      <description>A set of Tutorials are available on github in the form of jupyter notebooks.</description>
     </item>
     
     <item>
@@ -46,7 +44,17 @@ The purpose of this site is to introduce some of the ways that a GPlates python 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://siwill22.github.io/useful-links/</guid>
-      <description></description>
+      <description>// NOTEBOOK CONFIGURATION import notebook from &#34;https://api.observablehq.com/@siwill22/platetectonics-draggable.js&#34;; const target = document.querySelector(&#34;#visual&#34;); const renders = { &#34;viewof reconstructionModel&#34;: &#34;reconstructionModel&#34;, &#34;viewof reconstructionTime&#34;: &#34;reconstructionTime&#34;, &#34;canvas&#34;: &#34;div.fullwidth&#34;, }; // BOILERPLATE import {Inspector, Runtime} from &#34;https://unpkg.com/@observablehq/notebook-runtime@1.2.0?module&#34;; for (let i in renders) { let s = renders[i], a = s.match(/^\w+/); if (a) { renders[i] = document.createElement(a[0]); target.appendChild(renders[i]); if (a = s.match(/\.(\w+)$/)) renders[i].className = a[1]; } else renders[i] = document.querySelector(renders[i]); } Runtime.load(notebook, (variable) = { if (renders[variable.</description>
+    </item>
+    
+    <item>
+      <title>What is pygplates?</title>
+      <link>https://siwill22.github.io/what-is-pygplates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/what-is-pygplates/</guid>
+      <description>GPlates is open source software for working with plate tectonic reconstructions. It has a graphical user interface that allows interactive viewing and modification of reconstructions.
+pygplates is a python API for GPlates. Basically, a python toolbox for coding plate tectonic analysis. There is no graphical interface - the idea is to write python code to automate tasks and perform novel analyses that would be repetitive or impossible within the GPlates GUI.</description>
     </item>
     
     <item>
