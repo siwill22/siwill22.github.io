@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>pygplates cookbook</title>
+    <title>Useful Links - pygplates cookbook</title>
     <meta name="generator" content="Hugo 0.50" />
 
     
     <meta name="description" content="A material design theme for documentations.">
     
-    <link rel="canonical" href="https://siwill22.github.io/">
+    <link rel="canonical" href="https://siwill22.github.io/observable/">
     
     <meta name="author" content="Digitalcraftsman">
     
 
-    <meta property="og:url" content="https://siwill22.github.io/">
+    <meta property="og:url" content="https://siwill22.github.io/observable/">
     <meta property="og:title" content="pygplates cookbook">
     <meta property="og:image" content="https://siwill22.github.io/images/GPlates_logo.png">
     <meta name="apple-mobile-web-app-title" content="pygplates cookbook">
@@ -69,9 +69,6 @@
     <script src="https://siwill22.github.io/javascripts/modernizr.js"></script>
 
     
-    <link href="https://siwill22.github.io/index.xml" rel="alternate" type="application/rss+xml" title="pygplates cookbook" />
-    <link href="https://siwill22.github.io/index.xml" rel="feed" type="application/rss+xml" title="pygplates cookbook" />
-    
 
   </head>
   <body class="palette-primary-blue palette-accent-cyan">
@@ -100,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        pygplates cookbook
+        Useful Links
       </div>
     </div>
 
@@ -257,14 +254,11 @@
 
 
 
-<a class="current" title="Home" href="https://siwill22.github.io/">
+<a  title="Home" href="https://siwill22.github.io/">
 	
 	Home
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -301,17 +295,44 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>pygplates cookbook </h1>
+			<h1>Useful Links </h1>
 
-			<p>Welcome to the prototype page for the pygplates cookbook. The purpose of this
-page is to provide a gentle introduction to pygplates and the world of
-quantitative plate tectonic analysis</p>
+			<div id="visual"></div>
 
-<p><img src="https://siwill22.github.io/images/PlateReconstruction.gif" alt="animation" /></p>
+<script type="module">
 
-<!--
-[About]({< relref "about/index.md#about"})
--->
+  // NOTEBOOK CONFIGURATION
+  import notebook from "https://api.observablehq.com/@siwill22/platetectonics-draggable.js";
+
+  const target = document.querySelector("#visual");
+  const renders = {
+    "viewof reconstructionModel": "reconstructionModel",
+    "viewof reconstructionTime": "reconstructionTime",
+    "canvas": "div.fullwidth",
+  };
+
+
+  // BOILERPLATE
+  import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.2.0?module";
+  for (let i in renders) {
+    let s = renders[i], a = s.match(/^\w+/);
+    if (a) {
+      renders[i] = document.createElement(a[0]);
+      target.appendChild(renders[i]);
+      if (a = s.match(/\.(\w+)$/))
+        renders[i].className = a[1];
+    }
+    else
+      renders[i] = document.querySelector(renders[i]);
+  }
+  Runtime.load(notebook, (variable) => {
+    if (renders[variable.name]) {
+      return new Inspector(renders[variable.name]);
+    } else {
+      return true; // uncomment to run hidden cells
+    }
+  });
+</script>
 
 
 			<aside class="copyright" role="note">
@@ -327,23 +348,37 @@ quantitative plate tectonic analysis</p>
 			<footer class="footer">
 				
 
-
-
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
+  
+      <a href="https://siwill22.github.io/tutorials/" title="Tutorials">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Tutorials
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
-  
-  
   <div class="next">
-      <a href="https://siwill22.github.io/extras/" title="Extras">
+  
+      <a href="https://siwill22.github.io/useful-links/" title="Useful Links">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Extras
+              Useful Links
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
@@ -351,8 +386,11 @@ quantitative plate tectonic analysis</p>
           </div>
         </div>
       </a>
+  
   </div>
 </nav>
+
+
 
 
 

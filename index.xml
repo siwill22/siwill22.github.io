@@ -26,7 +26,11 @@
       
       <guid>https://siwill22.github.io/gallery/</guid>
       <description>Below are some examples of analysis carried out with pygplates. Below each image is a link to a jupyter notebook that illustrates the steps involved for each example. Code and source data can be downloaded for you to try each example yourself.
-   Load CSV Data and Reconstruct Reconstruct Features to Birth Time         View notebook View notebook       Motion Paths Flowlines         View notebook View notebook       Convergence Velocities - Single Point Convergence Velocities - Along Plate Boundaries         View notebook View notebook       Reconstructions with GMT Animations         View notebook View notebook    </description>
+Load CSV Data and Reconstruct View notebook
+Reconstruct Features to Birth Time View notebook
+Motion Paths View notebook
+Flowlines View notebook
+Convergence Velocities - Single Point View notebook</description>
     </item>
     
     <item>
@@ -40,11 +44,22 @@
     
     <item>
       <title>Useful Links</title>
+      <link>https://siwill22.github.io/observable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://siwill22.github.io/observable/</guid>
+      <description>// NOTEBOOK CONFIGURATION import notebook from &#34;https://api.observablehq.com/@siwill22/platetectonics-draggable.js&#34;; const target = document.querySelector(&#34;#visual&#34;); const renders = { &#34;viewof reconstructionModel&#34;: &#34;reconstructionModel&#34;, &#34;viewof reconstructionTime&#34;: &#34;reconstructionTime&#34;, &#34;canvas&#34;: &#34;div.fullwidth&#34;, }; // BOILERPLATE import {Inspector, Runtime} from &#34;https://unpkg.com/@observablehq/notebook-runtime@1.2.0?module&#34;; for (let i in renders) { let s = renders[i], a = s.match(/^\w+/); if (a) { renders[i] = document.createElement(a[0]); target.appendChild(renders[i]); if (a = s.match(/\.(\w+)$/)) renders[i].className = a[1]; } else renders[i] = document.querySelector(renders[i]); } Runtime.load(notebook, (variable) = { if (renders[variable.</description>
+    </item>
+    
+    <item>
+      <title>Useful Links</title>
       <link>https://siwill22.github.io/useful-links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://siwill22.github.io/useful-links/</guid>
-      <description>// NOTEBOOK CONFIGURATION import notebook from &#34;https://api.observablehq.com/@siwill22/platetectonics-draggable.js&#34;; const target = document.querySelector(&#34;#visual&#34;); const renders = { &#34;viewof reconstructionModel&#34;: &#34;reconstructionModel&#34;, &#34;viewof reconstructionTime&#34;: &#34;reconstructionTime&#34;, &#34;canvas&#34;: &#34;div.fullwidth&#34;, }; // BOILERPLATE import {Inspector, Runtime} from &#34;https://unpkg.com/@observablehq/notebook-runtime@1.2.0?module&#34;; for (let i in renders) { let s = renders[i], a = s.match(/^\w+/); if (a) { renders[i] = document.createElement(a[0]); target.appendChild(renders[i]); if (a = s.match(/\.(\w+)$/)) renders[i].className = a[1]; } else renders[i] = document.querySelector(renders[i]); } Runtime.load(notebook, (variable) = { if (renders[variable.</description>
+      <description>GPlates Using pygplates requires some knowledge of GPlates - for example, concepts such as
+ rotation models reconstructable features resolved topological polygons  Introductory resources for newcomers can be found in the GPlates User Manual and the GPlates tutorials
+Data No data files are included with the pygplates download, so to get started you&amp;rsquo;ll need to either provide your own files or start with the files from one of the sources listed below (both GPlates and pygplates are agnostic of the reconstruction model used - the main requirement is that the reconstructions are contained in the file formats that GPlates/pygplates can recognise).</description>
     </item>
     
     <item>

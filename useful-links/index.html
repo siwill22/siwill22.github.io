@@ -182,7 +182,7 @@
 
 
 
-<a  title="Gallery" href="https://siwill22.github.io/gallery">
+<a  title="Gallery" href="https://siwill22.github.io/gallery/">
 	
 	Gallery
 </a>
@@ -300,42 +300,31 @@
 		<div class="wrapper">
 			<h1>Useful Links </h1>
 
-			<div id="visual"></div>
+			
 
-<script type="module">
+<h2 id="gplates">GPlates</h2>
 
-  // NOTEBOOK CONFIGURATION
-  import notebook from "https://api.observablehq.com/@siwill22/platetectonics-draggable.js";
+<p>Using pygplates requires some knowledge of GPlates - for example, concepts such as</p>
 
-  const target = document.querySelector("#visual");
-  const renders = {
-    "viewof reconstructionModel": "reconstructionModel",
-    "viewof reconstructionTime": "reconstructionTime",
-    "canvas": "div.fullwidth",
-  };
+<ul>
+<li>rotation models</li>
+<li>reconstructable features</li>
+<li>resolved topological polygons</li>
+</ul>
 
+<p>Introductory resources for newcomers can be found in the <a href="http://www.gplates.org/user-manual/">GPlates User Manual</a> and the <a href="https://sites.google.com/site/gplatestutorials/">GPlates tutorials</a></p>
 
-  // BOILERPLATE
-  import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1.2.0?module";
-  for (let i in renders) {
-    let s = renders[i], a = s.match(/^\w+/);
-    if (a) {
-      renders[i] = document.createElement(a[0]);
-      target.appendChild(renders[i]);
-      if (a = s.match(/\.(\w+)$/))
-        renders[i].className = a[1];
-    }
-    else
-      renders[i] = document.querySelector(renders[i]);
-  }
-  Runtime.load(notebook, (variable) => {
-    if (renders[variable.name]) {
-      return new Inspector(renders[variable.name]);
-    } else {
-      return true; // uncomment to run hidden cells
-    }
-  });
-</script>
+<h2 id="data">Data</h2>
+
+<p>No data files are included with the pygplates download, so to get started you&rsquo;ll need to either provide your own files or start with the files from one of the sources listed below (both GPlates and pygplates are agnostic of the reconstruction model used - the main requirement is that the reconstructions are contained in the file formats that GPlates/pygplates can recognise).</p>
+
+<p>The data formats supported by pygplates are the same as those used by GPlates, so GPlates provides a convenient tool to view any reconstruction model you are working with and troubleshoot any problems with pygplates scripts.</p>
+
+<p>For beginners, a good place to start is the <a href="http://www.earthbyte.org/gplates-2-1-software-and-data-sets/">GPlates Sample Data</a></p>
+
+<p>A number of different reconstruction models are publically available, some of which are listed <a href="https://www.earthbyte.org/category/resources/data-models/global-regional-plate-motion-models/">here</a></p>
+
+<p><br></p>
 
 
 			<aside class="copyright" role="note">
@@ -354,7 +343,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://siwill22.github.io/tutorials/" title="Tutorials">
+      <a href="https://siwill22.github.io/observable/" title="Useful Links">
         <span class="direction">
           Previous
         </span>
@@ -364,7 +353,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Tutorials
+              Useful Links
             </div>
           </div>
         </div>
