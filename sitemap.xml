@@ -21,6 +21,10 @@
   </url>
   
   <url>
+    <loc>https://siwill22.github.io/plate-tectonic-tools/</loc>
+  </url>
+  
+  <url>
     <loc>https://siwill22.github.io/tags/</loc>
     <priority>0</priority>
   </url>
@@ -43,6 +47,10 @@
   
   <url>
     <loc>https://siwill22.github.io/pygplates-api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://siwill22.github.io/pygplates-docker-kitematic/</loc>
   </url>
   
   <url>
