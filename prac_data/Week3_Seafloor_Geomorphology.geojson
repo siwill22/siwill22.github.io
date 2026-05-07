@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Week3_Seafloor_Geomorphology",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "A", "Longtitude": -58.37, "Latitude": -39.648 }, "geometry": { "type": "Point", "coordinates": [ -58.37, -39.648 ] } },
+{ "type": "Feature", "properties": { "Name": "B", "Longtitude": -56.048, "Latitude": 29.658 }, "geometry": { "type": "Point", "coordinates": [ -56.048, 29.658 ] } },
+{ "type": "Feature", "properties": { "Name": "C", "Longtitude": -59.205, "Latitude": 43.087 }, "geometry": { "type": "Point", "coordinates": [ -59.205, 43.087 ] } },
+{ "type": "Feature", "properties": { "Name": "D", "Longtitude": -176.480223, "Latitude": -30.163318 }, "geometry": { "type": "Point", "coordinates": [ -176.480223, -30.163318 ] } },
+{ "type": "Feature", "properties": { "Name": "E", "Longtitude": -142.576624, "Latitude": 56.267115 }, "geometry": { "type": "Point", "coordinates": [ -142.576624, 56.267115 ] } },
+{ "type": "Feature", "properties": { "Name": "F", "Longtitude": 123.484, "Latitude": -59.877 }, "geometry": { "type": "Point", "coordinates": [ 123.484, -59.877 ] } }
+]
+}
