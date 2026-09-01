@@ -5,74 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>People — Simon Williams</title>
 <meta name="description" content="PhD students supervised by Simon Williams, key research collaborators, and links to the EarthByte Group and GPlates project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<script src="/assets/js/theme.js" defer></script>
 <style>
-    :root {
-        --bg: #0a1420; --card: #10202f; --border: #1e3346;
-        --text: #dce8ee; --text-dim: #93a8b7; --accent: #34c9c2;
-        --accent-soft: #1c4a4a; --link: #6fd6d0;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        background: var(--bg); color: var(--text);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        line-height: 1.65;
-    }
-    a { color: var(--link); }
-    .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
-
-    header.site {
-        position: sticky; top: 0; z-index: 20;
-        background: rgba(10, 20, 32, 0.92); backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--border);
-    }
-    header.site nav {
-        max-width: 940px; margin: 0 auto; padding: 14px 24px;
-        display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    }
-    .brand { font-weight: 700; letter-spacing: 0.02em; color: var(--text); text-decoration: none; font-size: 1.05em; }
-    .back-link { color: var(--text-dim); text-decoration: none; font-size: 0.95em; }
-    .back-link:hover { color: var(--accent); }
-
-    .page-head { padding: 56px 0 32px; border-bottom: 1px solid var(--border); }
-    .eyebrow {
-        display: inline-block; color: var(--accent); font-size: 0.8em;
-        letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
-    }
-    h1 { font-size: 2.1em; margin-bottom: 14px; letter-spacing: -0.01em; }
-    .lede { color: var(--text-dim); max-width: 640px; font-size: 1.05em; }
-
-    section { padding: 48px 0; border-bottom: 1px solid var(--border); }
-    section:last-of-type { border-bottom: none; }
-    h2.section-title { font-size: 1.4em; margin-bottom: 8px; color: var(--text); }
-    .section-sub { color: var(--text-dim); margin-bottom: 26px; max-width: 620px; font-size: 0.95em; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .card {
-        background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px;
-    }
-    .card h3 { font-size: 1.02em; margin-bottom: 6px; color: var(--text); }
-    .card p { color: var(--text-dim); font-size: 0.92em; }
-    .card .tag {
-        display: inline-block; font-size: 0.7em; letter-spacing: 0.06em; text-transform: uppercase;
-        color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 100px;
-        margin-bottom: 10px;
-    }
-    .card .meta { color: var(--text-dim); font-size: 0.82em; margin-top: 8px; }
-    .card a.card-link { display: inline-block; margin-top: 10px; font-size: 0.88em; text-decoration: none; }
-    .card a.card-link:hover { text-decoration: underline; }
-
-    .groups .card { padding: 26px; }
-    .groups h3 { font-size: 1.15em; margin-bottom: 10px; }
-    .groups p { font-size: 0.95em; margin-bottom: 4px; }
-
-    .note {
-        color: var(--text-dim); font-size: 0.88em; margin-top: 22px; font-style: italic;
-    }
-
-    footer.site {
-        padding: 30px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.9em;
-    }
-
+        h1 { font-size: 2.1em; margin-bottom: 14px; }
+    .note { color: var(--ink-soft); font-size: 0.88em; margin-top: 22px; font-style: italic; }
     @media (max-width: 600px) { h1 { font-size: 1.7em; } }
 </style>
 </head>
@@ -81,7 +22,13 @@
 <header class="site">
     <nav>
         <a href="../" class="brand">Simon Williams</a>
-        <a href="../" class="back-link">&larr; Back to home</a>
+        <div class="navgroup">
+
+            <a href="../" class="back-link">&larr; Back to home</a>
+
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
+
+        </div>
     </nav>
 </header>
 
@@ -90,9 +37,9 @@
         <span class="eyebrow">People</span>
         <h1>Students &amp; collaborators</h1>
         <p class="lede">
-            Research in this area is collaborative by nature — reconstructions, models and datasets are built with
-            students and long-term co-authors across several institutions, and much of it is developed together
-            with the <a href="https://www.earthbyte.org" target="_blank" rel="noopener">EarthByte Group</a> and the
+            Research in this area is collaborative. Reconstructions, models and datasets are built with students
+            and long-term co-authors across several institutions, developed together with the
+            <a href="https://www.earthbyte.org" target="_blank" rel="noopener">EarthByte Group</a> and the
             <a href="https://www.gplates.org" target="_blank" rel="noopener">GPlates</a> project.
         </p>
     </div>
@@ -104,7 +51,7 @@
         <p class="section-sub">Two long-running collaborations that most of this work sits inside.</p>
         <div class="grid">
             <div class="card">
-                <h3>🌐 EarthByte Group</h3>
+                <h3>EarthByte Group</h3>
                 <p>
                     A research group at the University of Sydney building open datasets and models of Earth's
                     plate tectonic, geodynamic and paleogeographic evolution. I was a Research Fellow with
@@ -113,11 +60,11 @@
                 <a class="card-link" href="https://www.earthbyte.org" target="_blank" rel="noopener">earthbyte.org →</a>
             </div>
             <div class="card">
-                <h3>🗺️ GPlates</h3>
+                <h3>GPlates</h3>
                 <p>
                     Open-source software for building and visualising plate tectonic reconstructions, developed by
                     EarthByte and collaborators including the University of Sydney, Caltech and Norway's
-                    GPlates.org team. I contribute to GPlates and its Python ecosystem — see
+                    GPlates.org team. I contribute to GPlates and its Python ecosystem, see
                     <a href="../research/plate-tectonics/">Plate tectonic reconstructions</a>.
                 </p>
                 <a class="card-link" href="https://www.gplates.org" target="_blank" rel="noopener">gplates.org →</a>
@@ -132,22 +79,22 @@
         <p class="section-sub">Current students I supervise or co-supervise.</p>
         <div class="grid">
             <div class="card">
-                <span class="tag">Marine Geoscience</span>
+                <span class="tag swatch-green">Marine Geoscience</span>
                 <h3>Philippe Vandenbossche</h3>
                 <p>Evolution of the Seafloor of the Australian-Antarctic Southern Ocean</p>
                 <div class="meta">Commenced September 2020</div>
             </div>
             <div class="card">
-                <span class="tag">Marine Geoscience</span>
+                <span class="tag swatch-violet">Marine Geoscience</span>
                 <h3>Rekha Nair Madhu Soodanan Pillai Sasilekha</h3>
                 <p>
-                    The Magnetisation of Earth's Ocean Lithosphere: A new view from space — part of the
-                    <a href="../#projects">ARC Future Fellowship</a> project.
+                    The Magnetisation of Earth's Ocean Lithosphere: A new view from space (part of the
+                    <a href="../#projects">ARC Future Fellowship</a> project).
                 </p>
                 <div class="meta">Commenced February 2025</div>
             </div>
             <div class="card">
-                <span class="tag">Geodynamics</span>
+                <span class="tag swatch-indigo">Geodynamics</span>
                 <h3>Katie Dixon</h3>
                 <p>Tectonic Southern Ocean Reconstructions</p>
                 <div class="meta">Commenced July 2026</div>

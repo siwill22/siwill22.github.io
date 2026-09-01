@@ -5,117 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simon Williams — IMAS, University of Tasmania</title>
 <meta name="description" content="Simon Williams is an Associate Professor and ARC Future Fellow at the Institute for Marine and Antarctic Studies, University of Tasmania, working on plate tectonics, marine geophysics and geodynamics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<script src="/assets/js/theme.js" defer></script>
 <style>
-    :root {
-        --bg: #0a1420;
-        --bg-alt: #0f1e2e;
-        --card: #10202f;
-        --border: #1e3346;
-        --text: #dce8ee;
-        --text-dim: #93a8b7;
-        --accent: #34c9c2;
-        --accent-soft: #1c4a4a;
-        --link: #6fd6d0;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        line-height: 1.65;
-    }
-    a { color: var(--link); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-
-    /* nav */
-    header.site {
-        position: sticky; top: 0; z-index: 20;
-        background: rgba(10, 20, 32, 0.92);
-        backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--border);
-    }
-    header.site nav {
-        max-width: 980px; margin: 0 auto; padding: 14px 24px;
-        display: flex; align-items: center; justify-content: space-between;
-        gap: 16px; flex-wrap: wrap;
-    }
-    .brand { font-weight: 700; letter-spacing: 0.02em; color: var(--text); text-decoration: none; font-size: 1.05em; }
-    .navlinks { display: flex; gap: 22px; flex-wrap: wrap; }
-    .navlinks a { color: var(--text-dim); text-decoration: none; font-size: 0.95em; }
-    .navlinks a:hover { color: var(--accent); }
-
-    /* hero */
     .hero {
         position: relative;
-        padding: 72px 0 56px;
+        padding: 56px 0 0;
+    }
+    .hero::after {
+        content: ""; position: absolute; left: -6px; right: -6px; bottom: -8px; height: 15px;
+        background-color: var(--ink);
+        -webkit-mask-image: var(--wave-mask); mask-image: var(--wave-mask);
+        -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+        -webkit-mask-size: 340px 100%; mask-size: 340px 100%;
+        pointer-events: none;
+    }
+    .hero-grid {
+        display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center;
+        padding-bottom: 40px;
+    }
+    .hero-map {
+        position: relative; align-self: start;
+        border-radius: 4px 18px 3px 22px / 16px 4px 20px 3px;
         overflow: hidden;
-        border-bottom: 1px solid var(--border);
-        background:
-            radial-gradient(ellipse at 15% 20%, rgba(52,201,194,0.10), transparent 55%),
-            radial-gradient(ellipse at 85% 0%, rgba(52,201,194,0.06), transparent 45%);
     }
-    .hero svg.plate-lines {
-        position: absolute; inset: 0; width: 100%; height: 100%;
-        opacity: 0.16; pointer-events: none;
+    .hero-map::before, .hero-map::after {
+        content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
     }
-    .hero-inner { position: relative; }
-    .eyebrow {
-        display: inline-block; color: var(--accent); font-size: 0.8em;
-        letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
-    }
-    h1.name { font-size: 2.6em; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .title-line { color: var(--text-dim); font-size: 1.15em; margin-bottom: 4px; }
-    .affil-line { color: var(--text-dim); font-size: 1.05em; margin-bottom: 22px; }
-    .affil-line a { color: var(--text-dim); text-decoration: underline; text-decoration-color: var(--border); }
-    .affil-line a:hover { color: var(--accent); }
-    .lede { max-width: 640px; color: var(--text); font-size: 1.05em; margin-bottom: 28px; }
-
-    .btnrow { display: flex; flex-wrap: wrap; gap: 10px; }
-    .btn {
-        display: inline-flex; align-items: center; gap: 8px;
-        padding: 9px 16px; border-radius: 7px; text-decoration: none;
-        font-size: 0.92em; border: 1px solid var(--border); color: var(--text);
-        transition: all 0.15s;
-    }
-    .btn:hover { border-color: var(--accent); color: var(--accent); }
-    .btn.primary { background: var(--accent); color: #08171a; border-color: var(--accent); font-weight: 600; }
-    .btn.primary:hover { background: var(--link); color: #08171a; }
-
-    /* sections */
-    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
-    section:last-of-type { border-bottom: none; }
-    h2.section-title {
-        font-size: 1.5em; margin-bottom: 8px; color: var(--text);
-    }
-    .section-sub { color: var(--text-dim); margin-bottom: 30px; max-width: 620px; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-    .card {
-        background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-        padding: 22px;
-    }
-    .card h3 { font-size: 1.05em; margin-bottom: 8px; color: var(--text); display: flex; align-items: center; gap: 8px;}
-    .card p { color: var(--text-dim); font-size: 0.95em; }
-    .card .tag {
-        display: inline-block; font-size: 0.72em; letter-spacing: 0.06em; text-transform: uppercase;
-        color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 100px;
-        margin-bottom: 10px;
-    }
-    .card a.card-link { display: inline-block; margin-top: 12px; font-size: 0.9em; text-decoration: none; }
-    .card a.card-link:hover { text-decoration: underline; }
-
-    footer.site {
-        padding: 40px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.9em;
-    }
-    footer.site .footlinks { margin-bottom: 14px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
-    footer.site .footlinks a { text-decoration: none; }
-    footer.site .footlinks a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-        h1.name { font-size: 2em; }
-        .hero { padding: 52px 0 40px; }
-        section { padding: 40px 0; }
+    .hero-map::before { border: var(--rule) solid var(--ink); }
+    .hero-map::after { inset: 2px; border: 1.5px solid var(--ink); opacity: 0.5; transform: rotate(0.5deg); }
+    .hero-map img { display: block; width: 100%; height: auto; }
+    @media (max-width: 860px) {
+        .hero-grid { grid-template-columns: 1fr; }
+        .hero-map { order: -1; }
     }
 </style>
 </head>
@@ -132,40 +58,37 @@
             <a href="people/">People</a>
             <a href="#about">Background</a>
             <a href="games/">Games</a>
-            <a href="#contact">Contact</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
         </div>
     </nav>
 </header>
 
 <div id="top" class="hero">
-    <svg class="plate-lines" viewBox="0 0 980 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 C150,90 220,20 380,50 S620,120 780,70 S980,40 980,40" stroke="#34c9c2" stroke-width="1.2" fill="none"/>
-        <path d="M0,180 C180,150 260,220 420,190 S680,140 820,200 S980,190 980,190" stroke="#34c9c2" stroke-width="1.2" fill="none"/>
-        <path d="M0,280 C160,250 320,300 500,270 S760,240 980,280" stroke="#34c9c2" stroke-width="1.2" fill="none"/>
-        <circle cx="380" cy="50" r="3" fill="#34c9c2"/>
-        <circle cx="820" cy="200" r="3" fill="#34c9c2"/>
-        <circle cx="500" cy="270" r="3" fill="#34c9c2"/>
-    </svg>
-    <div class="wrap hero-inner">
-        <span class="eyebrow">Institute for Marine and Antarctic Studies</span>
-        <h1 class="name">Simon Williams</h1>
-        <div class="title-line">Associate Professor &amp; ARC Future Fellow</div>
-        <div class="affil-line">
-            <a href="https://www.utas.edu.au/imas" target="_blank" rel="noopener">IMAS</a>, University of Tasmania · Hobart, Australia
+    <div class="wrap hero-grid">
+        <div>
+            <span class="eyebrow">Institute for Marine and Antarctic Studies</span>
+            <h1 class="name">Simon Williams</h1>
+            <div class="title-line">Associate Professor &amp; ARC Future Fellow</div>
+            <div class="affil-line">
+                <a href="https://www.utas.edu.au/imas" target="_blank" rel="noopener">IMAS</a>, University of Tasmania · Hobart, Australia
+            </div>
+            <p class="lede">
+                I'm a geophysicist working on how the Earth's plates, oceans and continents have moved and
+                deformed through deep time, and using gravity, magnetic and marine geophysical data to understand
+                what's happening beneath the seafloor today. I also build open scientific software and run outreach
+                projects that put research instruments in front of students.
+            </p>
+            <div class="btnrow">
+                <a class="btn primary" href="#projects">See current projects</a>
+                <a class="btn" href="https://discover.utas.edu.au/Simon.Williams/about" target="_blank" rel="noopener">UTAS Profile</a>
+                <a class="btn" href="https://scholar.google.com/citations?user=XcHnv7EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                <a class="btn" href="https://www.researchgate.net/profile/Simon-Williams-17" target="_blank" rel="noopener">ResearchGate</a>
+                <a class="btn" href="https://github.com/siwill22" target="_blank" rel="noopener">GitHub</a>
+            </div>
         </div>
-        <p class="lede">
-            I'm a geophysicist reconstructing how the Earth's plates, oceans and continents have moved and
-            deformed through deep time — and using gravity, magnetic and marine geophysical data to understand
-            what's happening beneath the seafloor today. I also build open scientific software and run outreach
-            projects that put real research instruments in front of students.
-        </p>
-        <div class="btnrow">
-            <a class="btn primary" href="#projects">See current projects</a>
-            <a class="btn" href="https://discover.utas.edu.au/Simon.Williams/about" target="_blank" rel="noopener">UTAS Profile</a>
-            <a class="btn" href="https://scholar.google.com/citations?user=XcHnv7EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            <a class="btn" href="https://www.researchgate.net/profile/Simon-Williams-17" target="_blank" rel="noopener">ResearchGate</a>
-            <a class="btn" href="https://github.com/siwill22" target="_blank" rel="noopener">GitHub</a>
-        </div>
+        <figure class="hero-map">
+            <img src="assets/img/mondrian-80ma.png" alt="An abstract Mondrian-style composition of Earth's continents reconstructed to 80 million years ago, rendered as coloured rectangles with thick black borders">
+        </figure>
     </div>
 </div>
 
@@ -173,21 +96,21 @@
     <div class="wrap">
         <h2 class="section-title">Research</h2>
         <p class="section-sub">
-            My work sits at the intersection of plate tectonics, marine geophysics and geodynamics — reconstructing
-            the past to help explain the geology, oceans and climate of the present.
+            My work spans plate tectonics, marine geophysics and geodynamics: reconstructing the past to help
+            explain the geology, oceans and climate of the present.
         </p>
         <div class="grid">
             <div class="card">
-                <h3>🌍 Plate tectonic reconstructions</h3>
+                <h3>Plate tectonic reconstructions</h3>
                 <p>
                     Building full-plate, deep-time reconstructions of continents, ocean basins and plate boundaries,
                     and developing the open-source <a href="https://www.gplates.org" target="_blank" rel="noopener">GPlates</a>
-                    software used by the wider Earth science community.
+                    software used by other Earth scientists.
                 </p>
                 <a class="card-link" href="research/plate-tectonics/">Learn more →</a>
             </div>
             <div class="card">
-                <h3>🚢 Marine geophysics</h3>
+                <h3>Marine geophysics</h3>
                 <p>
                     Collecting and analysing gravity, magnetic and bathymetric data at sea aboard national research
                     vessels to map the structure of the seafloor and the crust beneath it.
@@ -195,15 +118,15 @@
                 <a class="card-link" href="research/marine-geophysics/">Learn more →</a>
             </div>
             <div class="card">
-                <h3>🧭 Geodynamics &amp; deep time</h3>
+                <h3>Geodynamics &amp; deep time</h3>
                 <p>
-                    Linking plate motions to sedimentary basin formation, mantle convection, and long-term links
-                    between tectonics, ocean gateways and past climate.
+                    Connecting plate motions to sedimentary basin formation, mantle convection, and the long-term
+                    links between tectonics, ocean gateways and past climate.
                 </p>
                 <a class="card-link" href="research/geodynamics/">Learn more →</a>
             </div>
             <div class="card">
-                <h3>📡 Open data &amp; outreach</h3>
+                <h3>Open data &amp; outreach</h3>
                 <p>
                     Maintaining open-access geoscience databases and building low-cost instrumentation for public
                     and classroom science engagement.
@@ -220,7 +143,7 @@
         <p class="section-sub">A mix of research infrastructure, outreach and (occasionally) games.</p>
         <div class="grid">
             <div class="card">
-                <span class="tag">Active · 2024–2026</span>
+                <span class="tag swatch-green">Active · 2024–2026</span>
                 <h3>AusMIS — Australian Magnetometers in Schools</h3>
                 <p>
                     Project lead. Building and piloting low-cost magnetometers for secondary school classrooms so
@@ -231,21 +154,21 @@
                 <a class="card-link" href="https://www.auscope.org.au/projects/magnetometers-in-schools" target="_blank" rel="noopener" style="margin-left:14px;">AuScope project page →</a>
             </div>
             <div class="card">
-                <span class="tag">Fellowship · 2023–2027</span>
+                <span class="tag swatch-violet">Fellowship · 2023–2027</span>
                 <h3>The magnetisation of Earth's lithosphere — a new view from space</h3>
                 <p>
                     An ARC Future Fellowship using new satellite observations to work out where Earth's crustal
                     magnetic field actually comes from, and to build better models of the magnetisation of the
-                    crust and uppermost mantle — with applications from mineral exploration to heat flow beneath
-                    the Antarctic ice sheet.
+                    crust and uppermost mantle, with possible applications from mineral exploration to heat flow
+                    beneath the Antarctic ice sheet.
                 </p>
             </div>
             <div class="card">
-                <span class="tag">Voyage · 2027–2028</span>
+                <span class="tag swatch-indigo">Voyage · 2027–2028</span>
                 <h3>Tectonic and volcanic evolution of Australia's northwest margin</h3>
                 <p>
                     A Marine National Facility research voyage to sample submarine plateaus off northwest
-                    Australia — remnants of the continent's earliest breakup from Gondwana, in a part of the
+                    Australia, remnants of the continent's earliest breakup from Gondwana, in a part of the
                     seafloor that is still poorly sampled and whose origins remain disputed.
                 </p>
             </div>
@@ -254,7 +177,7 @@
                 <h3>Ocean Exploration Games</h3>
                 <p>
                     A small collection of free, browser-based games about seafloor mapping, magnetometers and rock
-                    hunting — built as a side project to make ocean and Earth science playful.
+                    hunting, built as a side project to make ocean and Earth science a bit more playful.
                 </p>
                 <a class="card-link" href="games/">Play the games →</a>
             </div>
@@ -267,7 +190,7 @@
         <h2 class="section-title">Open-source tools &amp; code</h2>
         <p class="section-sub">
             I try to release the code behind my research rather than leaving it in a paper's supplementary material.
-            Most of it lives on <a href="https://github.com/siwill22" target="_blank" rel="noopener">GitHub</a> —
+            Most of it lives on <a href="https://github.com/siwill22" target="_blank" rel="noopener">GitHub</a>:
             reconstruction infrastructure, notebooks that reproduce published figures, and a few experiments.
         </p>
         <div class="grid">
@@ -290,7 +213,7 @@
             <div class="card">
                 <h3>agegrid-0.1</h3>
                 <p>
-                    Automated workflow that turns topological plate reconstructions into seafloor age grids —
+                    Automated workflow that turns topological plate reconstructions into seafloor age grids,
                     including for ocean basins that no longer exist.
                 </p>
                 <a class="card-link" href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">Repository →</a>
@@ -298,8 +221,8 @@
             <div class="card">
                 <h3>AbFab</h3>
                 <p>
-                    Generates synthetic abyssal hill seafloor fabric from spreading rate and crustal age — also an
-                    experiment in using Claude Code to build a genuinely useful research tool.
+                    Generates synthetic abyssal hill seafloor fabric from spreading rate and crustal age. Also an
+                    experiment in using Claude Code to write research software.
                 </p>
                 <a class="card-link" href="https://github.com/siwill22/AbFab" target="_blank" rel="noopener">Repository →</a>
             </div>
@@ -335,7 +258,7 @@
     <div class="wrap">
         <h2 class="section-title">Writing</h2>
         <p class="section-sub">
-            I occasionally write for a general audience on <a href="https://theconversation.com/profiles/simon-williams-128433" target="_blank" rel="noopener">The Conversation</a> —
+            I occasionally write for a general audience on <a href="https://theconversation.com/profiles/simon-williams-128433" target="_blank" rel="noopener">The Conversation</a>,
             explaining ideas about plate tectonics, lost continents and the deep Earth without the jargon.
         </p>
         <a class="btn" href="writing/">Read the articles →</a>
@@ -354,14 +277,14 @@
                 (2019–2023), before joining IMAS at the University of Tasmania, where I now hold an ARC Future
                 Fellowship. Alongside research, I go to sea on national research vessels, supervise
                 <a href="people/">PhD students</a> and collaborate closely with colleagues across several
-                institutions, and work on public science engagement — including through the
+                institutions, and work on public science engagement, including through the
                 <a href="#projects">AusMIS</a> program.
             </p>
         </div>
     </div>
 </section>
 
-<footer class="site" id="contact">
+<footer class="site">
     <div class="wrap">
         <div class="footlinks">
             <a href="https://discover.utas.edu.au/Simon.Williams/about" target="_blank" rel="noopener">UTAS Profile</a>

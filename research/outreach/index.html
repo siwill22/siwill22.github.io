@@ -5,76 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Open Data &amp; Outreach — Simon Williams</title>
 <meta name="description" content="Maintaining open-access geoscience databases and building low-cost instrumentation for public and classroom science engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<script src="/assets/js/theme.js" defer></script>
 <style>
-    :root {
-        --bg: #0a1420; --card: #10202f; --border: #1e3346;
-        --text: #dce8ee; --text-dim: #93a8b7; --accent: #34c9c2;
-        --accent-soft: #1c4a4a; --link: #6fd6d0;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        background: var(--bg); color: var(--text);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        line-height: 1.65;
-    }
-    a { color: var(--link); }
-    .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
-
-    header.site {
-        position: sticky; top: 0; z-index: 20;
-        background: rgba(10, 20, 32, 0.92); backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--border);
-    }
-    header.site nav {
-        max-width: 780px; margin: 0 auto; padding: 14px 24px;
-        display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    }
-    .brand { font-weight: 700; letter-spacing: 0.02em; color: var(--text); text-decoration: none; font-size: 1.05em; }
-    .back-link { color: var(--text-dim); text-decoration: none; font-size: 0.95em; }
-    .back-link:hover { color: var(--accent); }
-
-    .page-head { padding: 56px 0 32px; border-bottom: 1px solid var(--border); }
-    .eyebrow {
-        display: inline-block; color: var(--accent); font-size: 0.8em;
-        letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
-    }
-    h1 { font-size: 2.1em; margin-bottom: 14px; letter-spacing: -0.01em; }
-    .lede { color: var(--text-dim); max-width: 620px; font-size: 1.05em; }
-
+        h1 { font-size: 2.1em; margin-bottom: 14px; }
     main { padding: 40px 0 60px; }
-    main p { margin-bottom: 18px; color: var(--text); }
-    main h2 { font-size: 1.2em; margin: 34px 0 12px; color: var(--text); }
-
-    .media { margin: 28px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: #eef1ef; padding: 14px 10px; }
-    .media img { display: block; width: 100%; height: auto; }
-    .caption { color: var(--text-dim); font-size: 0.85em; margin-top: 8px; margin-bottom: 18px; }
-
-    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
-    .related h2 { margin-top: 0; }
-    .related ul { list-style: none; }
-    .related li { padding: 8px 0; }
-    .related a { text-decoration: none; }
-    .related a:hover { text-decoration: underline; }
-
-    footer.site {
-        padding: 30px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.9em;
-        border-top: 1px solid var(--border);
-    }
-
     @media (max-width: 600px) { h1 { font-size: 1.7em; } }
 </style>
 </head>
 <body>
 
-<header class="site">
+<header class="site narrow">
     <nav>
         <a href="../../" class="brand">Simon Williams</a>
-        <a href="../../#research" class="back-link">&larr; Back to Research</a>
+        <div class="navgroup">
+
+            <a href="../../#research" class="back-link">&larr; Back to Research</a>
+
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
+
+        </div>
     </nav>
 </header>
 
 <div class="page-head">
-    <div class="wrap">
+    <div class="wrap-narrow">
         <span class="eyebrow">Research</span>
         <h1>Open data &amp; outreach</h1>
         <p class="lede">
@@ -84,11 +43,11 @@
     </div>
 </div>
 
-<main class="wrap">
+<main class="wrap-narrow">
     <p>
         Plate reconstructions, age grids and magnetisation models are only useful if other people can get at them.
         I try to publish the data and code behind published work rather than leaving it in a paper's supplementary
-        material — most of it lives in the <a href="../../#tools">open-source tools</a> section of this site.
+        material. Most of it lives in the <a href="../../#tools">open-source tools</a> section of this site.
     </p>
 
     <h2>AusMIS — Australian Magnetometers in Schools</h2>
@@ -103,7 +62,7 @@
         <img src="img/hobart-magnetogram.png" alt="Strip chart of magnetic field variation recorded at the AusMIS Hobart observatory feed">
     </div>
     <p class="caption">
-        A rolling feed of magnetic field data from the AusMIS Hobart observatory — the kind of live data students
+        A rolling feed of magnetic field data from the AusMIS Hobart observatory, the kind of live data students
         work with in the classroom. From <a href="https://github.com/AusMIS/hobart-data" target="_blank" rel="noopener">AusMIS/hobart-data</a>.
     </p>
 
@@ -111,8 +70,8 @@
     <p>
         The AusMIS code, data feeds and website are all developed in the open on
         <a href="https://github.com/AusMIS" target="_blank" rel="noopener">GitHub</a>, alongside the reconstruction
-        and modelling tools I build for my own research. I also write occasionally for a general audience — see
-        <a href="../../writing/">Writing</a>.
+        and modelling tools I build for my own research. I also write occasionally for a general audience (see
+        <a href="../../writing/">Writing</a>).
     </p>
 
     <div class="related">

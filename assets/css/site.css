@@ -1,0 +1,296 @@
+/*
+ * Shared design system for siwill22.github.io.
+ *
+ * De Stijl / early-modernist palette and type: paper background, black
+ * rules and sharp corners throughout (no border-radius, no soft shadows),
+ * three aurora colours sampled from the AusMIS logo standing in for
+ * Mondrian's red/yellow/blue. Jost is a free geometric sans built in the
+ * spirit of 1920s-30s faces like Futura and Kabel.
+ *
+ * --ink/--paper are the two poles of the theme and flip between light and
+ * dark mode (see the prefers-color-scheme block below); --fill-light and
+ * --fill-dark do not flip -- they're for text sitting on top of a fixed
+ * aurora-colour block (a tag, a swatch, the primary button), which needs a
+ * constant amount of contrast regardless of which theme the page is in.
+ *
+ * Not used by /games/ -- that page keeps its own retro-terminal look on
+ * purpose.
+ */
+
+:root {
+    --paper: #eae5d8;
+    --paper-alt: #dfd9c9;
+    --ink: #27242b;
+    --ink-soft: #5c574e;
+    --accent: #6b4a96;
+
+    --green: #4fb37a;
+    --violet: #5b3e82;
+    --indigo: #34345c;
+
+    --fill-light: #f5f2ea;
+    --fill-dark: #201e26;
+
+    --rule: 3px;
+    --rule-thick: 6px;
+
+    --font: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    /* a single wobbly line, tiled, used to "hand-ink" straight rules --
+       colour comes from mask-image consumers setting background-color, not
+       from this SVG, so it stays correct in both themes without a second copy */
+    --wave-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='20'%3E%3Cpath d='M0 11 C 34 3, 58 18, 96 10 C 126 4, 150 15, 188 11 C 214 8, 232 17, 266 9 C 292 3, 310 14, 340 10' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Dark mode: automatic from the OS/browser unless overridden by the toggle
+   (data-theme, set by assets/js/theme.js + localStorage), and always
+   applied when the toggle has explicitly picked dark. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --paper: #201e26;
+        --paper-alt: #2a2732;
+        --ink: #e7e2d5;
+        --ink-soft: #a39c8d;
+        --accent: #b79bde;
+    }
+}
+:root[data-theme="dark"] {
+    --paper: #201e26;
+    --paper-alt: #2a2732;
+    --ink: #e7e2d5;
+    --ink-soft: #a39c8d;
+    --accent: #b79bde;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font);
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 17px;
+}
+a { color: var(--accent); }
+a:hover { color: var(--ink); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+.wrap-narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+/* hand-inked rules ----------------------------------------------------
+   Anywhere a straight solid border used to sit, a pseudo-element now masks
+   a solid ink fill with --wave-mask instead, so the line reads as drawn,
+   not ruled. Thickness is just the pseudo's own height -- the same SVG
+   scales to fit, so one wave serves both weights. */
+header.site, footer.site, section, .related, .page-head {
+    position: relative;
+}
+header.site::after, footer.site::before, section::after,
+.related::before, .page-head::after {
+    content: ""; position: absolute; left: -6px; right: -6px;
+    background-color: var(--ink);
+    -webkit-mask-image: var(--wave-mask); mask-image: var(--wave-mask);
+    -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+    -webkit-mask-size: 340px 100%; mask-size: 340px 100%;
+    pointer-events: none;
+}
+header.site::after, footer.site::before, .page-head::after { height: 15px; }
+header.site::after { bottom: -8px; }
+footer.site::before { top: -8px; }
+.page-head::after { bottom: -8px; }
+section::after, .related::before { height: 8px; }
+section::after { bottom: -5px; }
+section:last-of-type::after { display: none; }
+.related::before { top: -5px; }
+
+/* nav ---------------------------------------------------------------- */
+header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: none;
+}
+header.site nav {
+    max-width: 980px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+}
+header.site.narrow nav { max-width: 780px; }
+.brand {
+    font-weight: 700; letter-spacing: 0.02em; color: var(--ink);
+    text-decoration: none; font-size: 1.2em; text-transform: uppercase;
+}
+.navlinks { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.navgroup { display: flex; align-items: center; gap: 12px; }
+.navlinks a {
+    color: var(--ink); text-decoration: none; font-size: 0.95em;
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
+    border-bottom: 2px solid transparent;
+}
+.navlinks a:hover { border-bottom-color: var(--accent); color: var(--ink); }
+.back-link {
+    color: var(--ink); text-decoration: none; font-size: 0.95em;
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
+}
+.back-link:hover { color: var(--accent); }
+
+.theme-toggle {
+    background: none; border: none; color: var(--ink); cursor: pointer;
+    width: 34px; height: 34px; font-size: 1.05em; line-height: 1;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    flex: none;
+}
+.theme-toggle:hover { background: var(--paper-alt); }
+
+/* type ----------------------------------------------------------------*/
+.eyebrow {
+    display: inline-block; color: var(--accent); font-size: 0.85em;
+    letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px;
+    font-weight: 600;
+}
+h1 {
+    font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase;
+}
+h1.name { font-size: 2.8em; margin-bottom: 10px; line-height: 1.05; }
+.title-line { color: var(--ink-soft); font-size: 1.2em; margin-bottom: 4px; }
+.affil-line { color: var(--ink-soft); font-size: 1.05em; margin-bottom: 22px; }
+.affil-line a { color: var(--ink-soft); text-decoration: underline; }
+.affil-line a:hover { color: var(--accent); }
+.lede { max-width: 640px; color: var(--ink); font-size: 1.1em; margin-bottom: 28px; }
+.page-sub, .section-sub { color: var(--ink-soft); margin-bottom: 26px; max-width: 620px; }
+
+.page-head { padding: 56px 0 32px; }
+
+/* hand-drawn boxes -------------------------------------------------------
+   Cards, buttons and media frames get a sketched double outline instead of
+   a ruled one: an irregular border-radius breaks up the right angles, a
+   solid ::before traces the "real" edge and a fainter, slightly rotated
+   ::after echoes it a couple of pixels off, the way a pen retraces a line
+   that didn't come out straight the first time. */
+.card, .btn, .media, .embed-poster {
+    position: relative;
+    border: none;
+}
+.card::before, .btn::before, .media::before, .embed-poster::before,
+.card::after, .btn::after, .media::after, .embed-poster::after {
+    content: ""; position: absolute; inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.card::before, .btn::before, .media::before, .embed-poster::before {
+    border: var(--rule) solid var(--ink);
+}
+.card::after, .btn::after, .media::after, .embed-poster::after {
+    inset: 2px;
+    border: 1.5px solid var(--ink);
+    opacity: 0.5;
+    transform: rotate(-0.5deg);
+}
+
+.card { border-radius: 3px 16px 4px 20px / 14px 3px 20px 4px; }
+.grid .card:nth-of-type(4n+1) { border-radius: 3px 16px 4px 20px / 14px 3px 20px 4px; transform: rotate(-0.3deg); filter: brightness(1.02); }
+.grid .card:nth-of-type(4n+2) { border-radius: 20px 4px 22px 3px / 3px 20px 3px 16px; transform: rotate(0.35deg); filter: brightness(0.97); }
+.grid .card:nth-of-type(4n+3) { border-radius: 4px 20px 3px 18px / 18px 3px 16px 4px; transform: rotate(-0.4deg); filter: brightness(1.04); }
+.grid .card:nth-of-type(4n)   { border-radius: 18px 3px 20px 4px / 4px 18px 4px 22px; transform: rotate(0.25deg); filter: brightness(0.99); }
+
+.btn { border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; }
+.media, .embed-poster { border-radius: 3px 10px 3px 10px / 8px 3px 10px 3px; }
+
+/* buttons ---------------------------------------------------------------*/
+.btnrow { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; text-decoration: none;
+    font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600;
+    color: var(--ink); background: var(--paper);
+    transition: transform 0.1s;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn.primary { background: var(--violet); color: var(--fill-light); }
+.btn.primary:hover { background: var(--ink); color: var(--paper); }
+
+/* sections ----------------------------------------------------------- */
+section { padding: 60px 0; }
+h2.section-title {
+    font-size: 1.6em; margin-bottom: 10px; color: var(--ink);
+    text-transform: uppercase; font-weight: 700; letter-spacing: -0.005em;
+}
+main h2 { font-size: 1.3em; margin: 36px 0 14px; color: var(--ink); text-transform: uppercase; font-weight: 700; }
+main p { margin-bottom: 18px; color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+
+.card {
+    background: var(--paper); padding: 24px;
+}
+.card h3 {
+    font-size: 1.08em; margin-bottom: 10px; color: var(--ink); font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+}
+.card p { color: var(--ink-soft); font-size: 0.95em; }
+.card .meta { color: var(--ink-soft); font-size: 0.82em; margin-top: 8px; }
+.card .tag {
+    display: inline-block; font-size: 0.72em; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--fill-light); background: var(--indigo); padding: 3px 9px;
+    margin-bottom: 12px; font-weight: 600;
+}
+.card a.card-link {
+    display: inline-block; margin-top: 12px; font-size: 0.9em; text-decoration: none;
+    font-weight: 600; color: var(--accent);
+}
+.card a.card-link:hover { text-decoration: underline; }
+
+/* colour swatches, used as the .tag / accent alternative when a block of
+   solid aurora colour reads better than the indigo pill. Text colour here
+   is fixed (not the flipping --ink/--paper) because the fill itself is
+   fixed -- a light-mode-only pairing would lose contrast in dark mode. */
+.swatch-green { background: var(--green); color: var(--fill-dark); }
+.swatch-violet { background: var(--violet); color: var(--fill-light); }
+.swatch-indigo { background: var(--indigo); color: var(--fill-light); }
+
+/* media / captions ------------------------------------------------------*/
+.media { margin: 28px 0; overflow: hidden; }
+.media img, .media svg { display: block; width: 100%; height: auto; }
+.media.light { background: var(--paper-alt); padding: 10px; }
+.caption { color: var(--ink-soft); font-size: 0.85em; margin-top: 8px; margin-bottom: 18px; }
+.caption a { color: var(--ink-soft); text-decoration: underline; }
+
+.embed-toolbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin: 28px 0 0; flex-wrap: wrap;
+}
+.embed-toolbar .embed-label { color: var(--ink-soft); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.03em; }
+.embed-poster {
+    display: block; margin-top: 12px;
+    overflow: hidden;
+}
+.embed-poster img { display: block; width: 100%; height: auto; }
+.embed-poster .launch-hint {
+    position: absolute; inset: auto 0 0 0; padding: 10px 16px;
+    background: linear-gradient(to top, rgba(20,19,26,0.92), transparent);
+    color: var(--fill-light); font-size: 0.85em; opacity: 0; transition: opacity 0.15s;
+    display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.embed-poster:hover .launch-hint { opacity: 1; }
+
+/* related / lists -------------------------------------------------------*/
+.related { margin-top: 44px; padding-top: 30px; }
+.related h2 { margin-top: 0; }
+.related ul, .publist { list-style: none; }
+.related li { padding: 10px 0; border-bottom: 1px solid var(--paper-alt); }
+.related a { text-decoration: none; font-weight: 500; }
+.related a:hover { text-decoration: underline; }
+
+/* footer ------------------------------------------------------------- */
+footer.site {
+    padding: 40px 0 60px; text-align: center; color: var(--ink-soft); font-size: 0.9em;
+}
+footer.site .footlinks { margin-bottom: 14px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+footer.site .footlinks a { text-decoration: none; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.03em; }
+footer.site .footlinks a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    h1.name { font-size: 2.1em; }
+    body { font-size: 16px; }
+    section { padding: 44px 0; }
+}
