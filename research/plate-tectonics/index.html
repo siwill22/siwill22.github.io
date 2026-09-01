@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plate Tectonic Reconstructions — Simon Williams</title>
+<meta name="description" content="Building full-plate, deep-time reconstructions of continents, ocean basins and plate boundaries with GPlates.">
+<style>
+    :root {
+        --bg: #0a1420; --card: #10202f; --border: #1e3346;
+        --text: #dce8ee; --text-dim: #93a8b7; --accent: #34c9c2;
+        --accent-soft: #1c4a4a; --link: #6fd6d0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        background: var(--bg); color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        line-height: 1.65;
+    }
+    a { color: var(--link); }
+    .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    header.site {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(10, 20, 32, 0.92); backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--border);
+    }
+    header.site nav {
+        max-width: 780px; margin: 0 auto; padding: 14px 24px;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { font-weight: 700; letter-spacing: 0.02em; color: var(--text); text-decoration: none; font-size: 1.05em; }
+    .back-link { color: var(--text-dim); text-decoration: none; font-size: 0.95em; }
+    .back-link:hover { color: var(--accent); }
+
+    .page-head { padding: 56px 0 32px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+        display: inline-block; color: var(--accent); font-size: 0.8em;
+        letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    h1 { font-size: 2.1em; margin-bottom: 14px; letter-spacing: -0.01em; }
+    .lede { color: var(--text-dim); max-width: 620px; font-size: 1.05em; }
+
+    main { padding: 40px 0 60px; }
+    main p { margin-bottom: 18px; color: var(--text); }
+    main h2 { font-size: 1.2em; margin: 34px 0 12px; color: var(--text); }
+
+    .media { margin: 28px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .media img { display: block; width: 100%; height: auto; }
+    .media.light { background: #eef1ef; padding: 10px; }
+    .media.light img { border-radius: 4px; }
+    .caption { color: var(--text-dim); font-size: 0.85em; margin-top: 8px; margin-bottom: 18px; }
+
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .related h2 { margin-top: 0; }
+    .related ul { list-style: none; }
+    .related li { padding: 8px 0; }
+    .related a { text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+
+    footer.site {
+        padding: 30px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.9em;
+        border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) { h1 { font-size: 1.7em; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+    <nav>
+        <a href="../../" class="brand">Simon Williams</a>
+        <a href="../../#research" class="back-link">&larr; Back to Research</a>
+    </nav>
+</header>
+
+<div class="page-head">
+    <div class="wrap">
+        <span class="eyebrow">Research</span>
+        <h1>Plate tectonic reconstructions</h1>
+        <p class="lede">
+            Building full-plate, deep-time reconstructions of continents, ocean basins and plate boundaries — and
+            the open software that makes them usable by other scientists.
+        </p>
+    </div>
+</div>
+
+<main class="wrap">
+    <p>
+        A plate tectonic reconstruction is a model of where every continent, microcontinent and plate boundary sat
+        at any point in Earth's past. Building one that is internally consistent — where plates don't overlap or
+        tear apart in ways the geology doesn't support — is a large data-integration problem, combining
+        magnetic and gravity anomalies, geological mapping, paleomagnetic data and seafloor age constraints into a
+        single connected model of plate motion.
+    </p>
+    <p>
+        These "full-plate" models, which describe the motion of every plate boundary rather than just a handful of
+        major plates, are what let researchers in very different fields — paleobiology, paleoclimate, seismology,
+        geodynamics — work in a shared spatial and temporal frame, sometimes hundreds of millions or even a
+        billion years into the past.
+    </p>
+
+    <h2>GPlates &amp; EarthByte</h2>
+    <p>
+        Much of this work happens through <a href="https://www.gplates.org" target="_blank" rel="noopener">GPlates</a>,
+        open-source desktop and Python software for building, visualising and querying plate reconstructions,
+        developed with the <a href="https://www.earthbyte.org" target="_blank" rel="noopener">EarthByte Group</a>
+        at the University of Sydney, where I was a Research Fellow for almost a decade. I contribute to GPlates and
+        the surrounding Python tooling (<code>pygplates</code>, and my own
+        <a href="https://github.com/siwill22/GPlatesReconstructionModel" target="_blank" rel="noopener">GPlatesReconstructionModel</a>
+        wrapper) that lets reconstructions be scripted and combined with other geospatial data rather than driven
+        only through a GUI. See also <a href="../../people/">people I work with</a>.
+    </p>
+
+    <h2>Seafloor age and lost ocean basins</h2>
+    <p>
+        One direct output of a full-plate reconstruction is a map of seafloor age — how old the oceanic crust is
+        at every point on the seafloor, including in ocean basins that have since been entirely subducted and no
+        longer exist. The animation below steps a seafloor age grid forward through time, built automatically from
+        a topological plate reconstruction.
+    </p>
+
+    <div class="media light">
+        <img src="img/agegrid-animation.gif" alt="Animated seafloor age grid evolving through geological time">
+    </div>
+    <p class="caption">
+        An automatically generated seafloor age grid stepping through geological time, from
+        <a href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">agegrid-0.1</a>.
+    </p>
+
+    <div class="related">
+        <h2>Related</h2>
+        <ul>
+            <li><a href="https://github.com/siwill22/GPlatesReconstructionModel" target="_blank" rel="noopener">GPlatesReconstructionModel</a> — Python interface for scripted plate reconstructions</li>
+            <li><a href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">agegrid-0.1</a> — reconstructing seafloor age, including in lost ocean basins</li>
+            <li><a href="https://github.com/siwill22/Deconstructing-Plate-Tectonic-Reconstructions" target="_blank" rel="noopener">Deconstructing Plate Tectonic Reconstructions</a> — how these models are actually built, and what that means for interpreting them</li>
+            <li><a href="../../writing/">What are lost continents, and why are we discovering so many?</a> — writing for a general audience</li>
+        </ul>
+    </div>
+</main>
+
+<footer class="site">
+    <div class="wrap">Simon Williams · Institute for Marine and Antarctic Studies, University of Tasmania</div>
+</footer>
+
+</body>
+</html>

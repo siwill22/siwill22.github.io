@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marine Geophysics — Simon Williams</title>
+<meta name="description" content="Collecting and analysing gravity, magnetic and bathymetric data at sea to map the structure of the seafloor and the crust beneath it.">
+<style>
+    :root {
+        --bg: #0a1420; --card: #10202f; --border: #1e3346;
+        --text: #dce8ee; --text-dim: #93a8b7; --accent: #34c9c2;
+        --accent-soft: #1c4a4a; --link: #6fd6d0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        background: var(--bg); color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        line-height: 1.65;
+    }
+    a { color: var(--link); }
+    .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    header.site {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(10, 20, 32, 0.92); backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--border);
+    }
+    header.site nav {
+        max-width: 780px; margin: 0 auto; padding: 14px 24px;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { font-weight: 700; letter-spacing: 0.02em; color: var(--text); text-decoration: none; font-size: 1.05em; }
+    .back-link { color: var(--text-dim); text-decoration: none; font-size: 0.95em; }
+    .back-link:hover { color: var(--accent); }
+
+    .page-head { padding: 56px 0 32px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+        display: inline-block; color: var(--accent); font-size: 0.8em;
+        letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    h1 { font-size: 2.1em; margin-bottom: 14px; letter-spacing: -0.01em; }
+    .lede { color: var(--text-dim); max-width: 620px; font-size: 1.05em; }
+
+    main { padding: 40px 0 60px; }
+    main p { margin-bottom: 18px; color: var(--text); }
+    main h2 { font-size: 1.2em; margin: 34px 0 12px; color: var(--text); }
+
+    .media { margin: 28px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .media img { display: block; width: 100%; height: auto; }
+    .caption { color: var(--text-dim); font-size: 0.85em; margin-top: 8px; margin-bottom: 18px; }
+    .caption a { color: var(--text-dim); text-decoration: underline; }
+
+    .related { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .related h2 { margin-top: 0; }
+    .related ul { list-style: none; }
+    .related li { padding: 8px 0; }
+    .related a { text-decoration: none; }
+    .related a:hover { text-decoration: underline; }
+
+    footer.site {
+        padding: 30px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.9em;
+        border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) { h1 { font-size: 1.7em; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+    <nav>
+        <a href="../../" class="brand">Simon Williams</a>
+        <a href="../../#research" class="back-link">&larr; Back to Research</a>
+    </nav>
+</header>
+
+<div class="page-head">
+    <div class="wrap">
+        <span class="eyebrow">Research</span>
+        <h1>Marine geophysics</h1>
+        <p class="lede">
+            Collecting and analysing gravity, magnetic and bathymetric data at sea aboard national research
+            vessels to map the structure of the seafloor and the crust beneath it.
+        </p>
+    </div>
+</div>
+
+<main class="wrap">
+    <p>
+        Most of the seafloor has never been surveyed in any real detail — satellite altimetry gives a coarse,
+        continent-scale picture, but resolving individual seamounts, plateaus and the boundaries between
+        continental and oceanic crust means going to sea. I sail on national research vessels to collect gravity,
+        magnetic and bathymetric data, and to dredge and core rock samples from features that are otherwise only
+        visible as vague bumps in a satellite-derived map.
+    </p>
+
+    <div class="media">
+        <img src="img/rv-investigator.jpg" alt="CSIRO Marine National Facility research vessel Investigator underway at sea">
+    </div>
+    <p class="caption">
+        RV <em>Investigator</em>, CSIRO's Marine National Facility research vessel, used for geophysical survey
+        voyages around Australia. Image: <a href="https://www.scienceimage.csiro.au/library/transportation/i/2362/rv-investigator-port-view/" target="_blank" rel="noopener">CSIRO / Science Image</a>, CC BY 3.0.
+    </p>
+
+    <h2>Why the northwest margin</h2>
+    <p>
+        A current focus is Australia's northwest margin, the first part of the continent to break away from
+        Gondwana. The deep seafloor between Australia and Indonesia — the Argo, Gascoyne and Cuvier abyssal
+        plains — records a complex, multiphase history of continental rifting through the Jurassic and Early
+        Cretaceous, but remains poorly sampled. An upcoming Marine National Facility voyage will target submarine
+        plateaus in this region to test competing explanations for how they formed — see
+        <a href="../../#projects">current projects</a>.
+    </p>
+
+    <h2>From data to structure</h2>
+    <p>
+        Gravity and magnetic data are indirect: they measure a field at the sea surface, not the rock itself, so
+        turning them into a map of crustal structure means modelling. I've worked on methods for depth estimation
+        from magnetic gradients (the tilt-depth method), and more recently on forward-modelling the magnetisation
+        of the oceanic lithosphere directly from satellite magnetic data — see
+        <a href="https://github.com/siwill22/curiesphere" target="_blank" rel="noopener">curiesphere</a>.
+    </p>
+
+    <div class="related">
+        <h2>Related</h2>
+        <ul>
+            <li><a href="https://github.com/siwill22/curiesphere" target="_blank" rel="noopener">curiesphere</a> — modelling lithospheric magnetization from satellite data</li>
+            <li><a href="../../writing/">What is it really like under the Indian Ocean?</a> — writing for a general audience</li>
+            <li><a href="../../writing/">How we traced the underwater volcanic ancestry of Lord Howe Island</a> — writing for a general audience</li>
+            <li><a href="https://www.csiro.au/en/about/facilities-collections/mnf" target="_blank" rel="noopener">CSIRO Marine National Facility</a></li>
+        </ul>
+    </div>
+</main>
+
+<footer class="site">
+    <div class="wrap">Simon Williams · Institute for Marine and Antarctic Studies, University of Tasmania</div>
+</footer>
+
+</body>
+</html>
