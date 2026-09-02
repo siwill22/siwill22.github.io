@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planetary Structure from Satellite Magnetic Data — Simon Williams</title>
+<meta name="description" content="Imaging subduction zones, oceanic lithosphere and the crust of Mars from orbit, using satellite magnetic field data from CHAMP, Swarm and MSS-1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<script src="/assets/js/theme.js" defer></script>
+<style>
+    h1 { font-size: 2.1em; margin-bottom: 14px; }
+    main.wrap-narrow { padding-top: 72px; padding-bottom: 60px; }
+    @media (max-width: 600px) { h1 { font-size: 1.7em; } }
+</style>
+</head>
+<body>
+
+<header class="site narrow">
+    <nav>
+        <div class="navgroup">
+            <a href="../../#research" class="back-link">&larr; Back to Research</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
+        </div>
+    </nav>
+</header>
+
+<div class="page-head">
+    <div class="wrap-narrow">
+        <span class="eyebrow">Research</span>
+        <h1>Planetary structure from satellite magnetic data</h1>
+        <p class="lede">
+            Earth's and Mars' magnetic fields, imaged from orbit, still carry the imprint of geology deep in the
+            crust below &mdash; subducting slabs, ancient dynamos, and the stripes left behind by seafloor
+            spreading.
+        </p>
+    </div>
+</div>
+
+<main class="wrap-narrow">
+
+    <p>
+        Most subduction zones show up as long-wavelength magnetic anomalies at satellite altitude, even though the
+        short-wavelength detail ships and aircraft record is far too weak to survive the climb to orbit.
+        <a href="https://doi.org/10.1029/2019JB017479" target="_blank" rel="noopener">Williams &amp; Gubbins (2019, JGR)</a>
+        modelled 13 subduction zones as vertically integrated magnetizations &mdash; increasing, level, or
+        decreasing away from the trench &mdash; to test whether the signal comes from a magnetized mantle wedge, a
+        uniform overlying layer, or the downgoing slab itself. The maps below, for the Sunda arc, compare the
+        observed satellite field against predictions from a global magnetization model with and without the
+        subduction zone model added.
+    </p>
+    <div class="media">
+        <img src="img/williams2019-jgr-fig6.png" alt="Four maps of the Sunda arc: the observed satellite magnetic field, the subducting slab geometry, and model predictions with and without a subduction zone magnetization model added">
+    </div>
+    <p class="caption">Figure 6, Williams &amp; Gubbins (2019).</p>
+
+    <p>
+        <a href="https://doi.org/10.1029/2021GL095913" target="_blank" rel="noopener">Gubbins, Jiang, Williams &amp; Zhang (2022, GRL)</a>
+        took the same vector-harmonic decomposition method to another planet entirely. Mars' crust is magnetized
+        roughly ten times more strongly than Earth's, and only part of that signal is visible in orbital magnetic
+        field models &mdash; the rest is mathematically invisible from orbit, no matter how good the data gets. The
+        maps below separate that visible signal from three different possible contributions of a uniformly
+        magnetized shell, showing how differently oriented ancient dynamo fields would leave the same present-day
+        orbital signature.
+    </p>
+    <div class="media">
+        <img src="img/gubbins2022-grl-fig1.png" alt="Four global maps of Mars showing the radial component of magnetization from different dipole field assumptions, dominated by strong red and blue anomalies over the southern highlands">
+    </div>
+    <p class="caption">Figure 1, Gubbins et al. (2022).</p>
+
+    <p>
+        <a href="https://doi.org/10.26464/epp2025033" target="_blank" rel="noopener">Williams, Gubbins, Livermore &amp; Jiang (2025, Earth and Planetary Physics)</a>
+        got early access to data from MSS-1, a new Macau-built satellite that began mapping Earth's magnetic field
+        in November 2023, and ran the first independent evaluation of its lithospheric field maps. The two globes
+        below compare a year of MSS-1 data against the established Swarm-A mission: the same ocean and continental
+        structure comes through in both, a reassuring sign for a brand-new instrument, though each satellite's
+        orbit geometry leaves its own faint track-line fabric on the map.
+    </p>
+    <div class="media">
+        <img src="img/williams2025mss1-epp-fig3.png" alt="Two global maps of the radial component of the lithospheric magnetic field from a year of MSS-1 data (top) and Swarm-A data (bottom), showing closely matching ocean and continental magnetic structure">
+    </div>
+    <p class="caption">Figure 3, Williams et al. (2025).</p>
+
+    <p>
+        <a href="https://doi.org/10.1029/2024JB030370" target="_blank" rel="noopener">Williams, Gubbins, Whittaker &amp; Seton (2025, JGR)</a>
+        is the paper this whole line of work has been building toward: using CHAMP and Swarm satellite data to map
+        the magnetization of the entire ocean floor, and testing it against models built from
+        <a href="../plate-tectonics/">plate tectonic reconstructions</a>. The maps below, for the northeast
+        Pacific, show the classic magnetic striping of the Emperor Trough and Hawaiian Seamounts region reproduced
+        by several magnetization models, benchmarked against the satellite-derived field and the region's known
+        reversal chronology (bottom left). Where the observed and modelled stripes disagree by hundreds of
+        kilometres, that is itself a signal &mdash; a location where the underlying plate reconstruction most
+        likely needs revising.
+    </p>
+    <div class="media">
+        <img src="img/williams2025oceanic-jgr-fig5.png" alt="Six maps of the northeast Pacific comparing satellite-observed magnetic anomalies (LCS), several forward-modelled magnetization predictions, and the seafloor reversal polarity chronology including the Emperor Trough and Hawaiian Seamounts">
+    </div>
+    <p class="caption">Figure 5, Williams et al. (2025).</p>
+
+    <div class="related">
+        <h2>Related</h2>
+        <ul>
+            <li><a href="../plate-tectonics/">Global plate tectonic reconstructions</a> &mdash; the plate models these satellite-derived magnetization models are tested against</li>
+            <li><a href="../../#projects">AusMIS</a> &mdash; mapping the same magnetic field from the ground up</li>
+            <li><a href="../../people/">People</a> &mdash; David Gubbins and other collaborators behind these studies</li>
+        </ul>
+    </div>
+</main>
+
+<footer class="site">
+    <div class="wrap">Simon Williams · Institute for Marine and Antarctic Studies, University of Tasmania</div>
+</footer>
+
+</body>
+</html>

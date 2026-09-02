@@ -13,7 +13,14 @@
 <script src="/assets/js/theme.js" defer></script>
 <style>
         h1 { font-size: 2.1em; margin-bottom: 14px; }
-    main { padding: 40px 0 60px; }
+    main.wrap-narrow { padding-top: 72px; padding-bottom: 60px; }
+    .voyage-list { list-style: none; margin: 0 0 28px; }
+    .voyage-list li { padding: 14px 0; border-bottom: 1px solid var(--paper-alt); }
+    .voyage-list .voyage-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .voyage-list .voyage-code { font-weight: 700; color: var(--ink); }
+    .voyage-list .voyage-role { color: var(--accent); font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.03em; font-weight: 600; }
+    .voyage-list .voyage-meta { color: var(--ink-soft); font-size: 0.85em; }
+    .voyage-list p { margin: 0; color: var(--ink-soft); font-size: 0.95em; }
     @media (max-width: 600px) { h1 { font-size: 1.7em; } }
 </style>
 </head>
@@ -21,7 +28,6 @@
 
 <header class="site narrow">
     <nav>
-        <a href="../../" class="brand">Simon Williams</a>
         <div class="navgroup">
 
             <a href="../../#research" class="back-link">&larr; Back to Research</a>
@@ -60,7 +66,46 @@
         voyages around Australia. Image: <a href="https://www.scienceimage.csiro.au/library/transportation/i/2362/rv-investigator-port-view/" target="_blank" rel="noopener">CSIRO / Science Image</a>, CC BY 3.0.
     </p>
 
-    <h2>Why the northwest margin</h2>
+    <h2>Voyages</h2>
+    <p>
+        Some of the sea time behind this work, as chief or alternate chief scientist:
+    </p>
+    <ul class="voyage-list">
+        <li>
+            <div class="voyage-head">
+                <span class="voyage-code">RV Southern Surveyor, SS2011/V06</span>
+                <span class="voyage-role">Chief Scientist</span>
+                <span class="voyage-meta">2011 &middot; 20 days</span>
+            </div>
+            <p>The Perth Abyssal Plain: understanding eastern Gondwana break-up.</p>
+        </li>
+        <li>
+            <div class="voyage-head">
+                <span class="voyage-code">RV Southern Surveyor, SS2012/V06</span>
+                <span class="voyage-role">Alternate Chief Scientist</span>
+                <span class="voyage-meta">2012 &middot; 25 days</span>
+            </div>
+            <p>Tectonic framework for the easternmost Coral Sea and the northern extent of the Lord Howe hotspot.</p>
+        </li>
+        <li>
+            <div class="voyage-head">
+                <span class="voyage-code">RV Investigator, IN2016/T01</span>
+                <span class="voyage-role">Chief Scientist</span>
+                <span class="voyage-meta">Jun&ndash;Jul 2016 &middot; 14 days</span>
+            </div>
+            <p>Continuity of Australian terranes into Zealandia: towards a geological map of the east Gondwana margin (ECOSAT II).</p>
+        </li>
+        <li>
+            <div class="voyage-head">
+                <span class="voyage-code">RV Investigator, IN2019/V04</span>
+                <span class="voyage-role">Alternate Chief Scientist</span>
+                <span class="voyage-meta">Aug&ndash;Sep 2019 &middot; 27 days</span>
+            </div>
+            <p>Hotspot dynamics in the Coral Sea: connections between the Australian plate and deep Earth (ECOSAT III).</p>
+        </li>
+    </ul>
+
+    <h2>Upcoming &mdash; Australia's northwest margin</h2>
     <p>
         A current focus is Australia's northwest margin, the first part of the continent to break away from
         Gondwana. The deep seafloor between Australia and Indonesia (the Argo, Gascoyne and Cuvier abyssal
@@ -68,15 +113,6 @@
         Cretaceous, but remains poorly sampled. An upcoming Marine National Facility voyage will target submarine
         plateaus in this region to test competing explanations for how they formed (see
         <a href="../../#projects">current projects</a>).
-    </p>
-
-    <h2>From data to structure</h2>
-    <p>
-        Gravity and magnetic data are indirect: they measure a field at the sea surface, not the rock itself, so
-        turning them into a map of crustal structure means modelling. I've worked on methods for depth estimation
-        from magnetic gradients (the tilt-depth method), and more recently on forward-modelling the magnetisation
-        of the oceanic lithosphere directly from satellite magnetic data (see
-        <a href="https://github.com/siwill22/curiesphere" target="_blank" rel="noopener">curiesphere</a>).
     </p>
 
     <div class="related">

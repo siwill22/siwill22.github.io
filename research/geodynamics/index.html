@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geodynamics &amp; Deep Time — Simon Williams</title>
-<meta name="description" content="Linking plate motions to sedimentary basin formation, mantle convection, and long-term links between tectonics, ocean gateways and past climate.">
+<title>Deep Time Geodynamics — Simon Williams</title>
+<meta name="description" content="Linking plate motions at the surface to mantle flow deep inside the Earth: mid-ocean ridge-plume interaction, hotspot motion, deforming basal mantle structures, rifting dynamics, subduction initiation, and craton deformation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
 <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
 <script src="/assets/js/theme.js" defer></script>
 <style>
-        h1 { font-size: 2.1em; margin-bottom: 14px; }
-    main { padding: 40px 0 60px; }
+    h1 { font-size: 2.1em; margin-bottom: 14px; }
+    main.wrap-narrow { padding-top: 72px; padding-bottom: 60px; }
     @media (max-width: 600px) { h1 { font-size: 1.7em; } }
 </style>
 </head>
@@ -21,13 +21,9 @@
 
 <header class="site narrow">
     <nav>
-        <a href="../../" class="brand">Simon Williams</a>
         <div class="navgroup">
-
             <a href="../../#research" class="back-link">&larr; Back to Research</a>
-
             <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
-
         </div>
     </nav>
 </header>
@@ -35,22 +31,113 @@
 <div class="page-head">
     <div class="wrap-narrow">
         <span class="eyebrow">Research</span>
-        <h1>Geodynamics &amp; deep time</h1>
+        <h1>Deep time geodynamics</h1>
         <p class="lede">
-            Linking plate motions at the surface to processes deep inside the Earth, and to their long-term
-            imprint on basins, climate and the shape of ocean gateways.
+            Plate motions at the surface and mantle flow in the deep Earth are two sides of the same system &mdash;
+            each shapes the other, over millions to billions of years.
         </p>
     </div>
 </div>
 
 <main class="wrap-narrow">
-    <p>
-        Plate reconstructions are more than a historical map: they're a boundary condition for models of what's
-        happening underneath. Where plates converge, diverge or tear apart controls mantle flow, and mantle flow
-        in turn shapes the surface: uplift and subsidence of sedimentary basins, the opening and closing of ocean
-        gateways, and the long-term degassing of CO₂ that ties plate tectonics to past climate.
-    </p>
 
+    <p>
+        <a href="https://doi.org/10.1038/ngeo2437" target="_blank" rel="noopener">Whittaker, Afonso, Masterton, M&uuml;ller, Wessel, Williams &amp; Seton (2015, Nature Geoscience)</a>
+        used a global plate model to reconstruct the position of large igneous provinces relative to mantle plumes
+        and mid-ocean ridges at the time each erupted, and found they repeatedly form where ridges and plumes
+        interact. That challenges the standard assumption that the geometry of mid-ocean ridges is independent of
+        what's happening deep in the lower mantle. The map below plots that reconstructed record of ridge-plume
+        interaction and large igneous province formation.
+    </p>
+    <div class="media">
+        <img src="img/whittaker2015-ngeo-fig1a.png" alt="World map showing reconstructed large igneous province locations relative to mid-ocean ridges and mantle plumes at the time of eruption">
+    </div>
+    <p class="caption">Fig. 1a, Whittaker et al. (2015).</p>
+
+    <p>
+        <a href="https://doi.org/10.1038/nature17422" target="_blank" rel="noopener">Hassan, Flament, Gurnis, Bower &amp; M&uuml;ller (2016, Nature)</a>
+        modelled how a fast-moving Pacific plate and a migrating network of subduction zones deform the Pacific
+        LLSVP at the base of the mantle, dragging the plume source beneath Hawai'i southward. The predicted
+        hotspot track reproduces the sharp Hawaiian-Emperor bend without needing a major change in Pacific plate
+        motion, and implies the Hawaiian plume has been active for around 140 million years, longer than usually
+        assumed. The map below shows the modelled plume trajectories and mantle flow field behind that result.
+    </p>
+    <div class="media">
+        <img src="img/hassan2016-nature-fig1a.png" alt="Global map showing modelled plume trajectories coloured by age, overlain on a background of mantle flow magnitude, including the trajectory beneath Hawaii">
+    </div>
+    <p class="caption">Fig. 1a, Hassan et al. (2016).</p>
+
+    <p>
+        <a href="https://doi.org/10.1038/ncomms14164" target="_blank" rel="noopener">Flament, Williams, M&uuml;ller, Gurnis &amp; Bower (2017, Nature Communications)</a>
+        used mantle flow models spanning 230 million years to explain the Perm Anomaly, a small thermochemical
+        structure beneath Eurasia that resembles a miniature version of the LLSVPs beneath Africa and the Pacific.
+        The models show it formed in isolation within a long-lived, closed subduction network more than 150 million
+        years ago, then migrated roughly 1,500&nbsp;km westward &mdash; evidence that deep mantle structures are
+        more mobile than the standard fixed-LLSVP picture assumes. The map below shows the model's predicted
+        present-day lower-mantle temperature structure.
+    </p>
+    <div class="media">
+        <img src="img/flament2017-natcomms-fig1b.png" alt="Global map showing predicted present-day lower mantle temperature structure at 2,677 km depth, highlighting the African and Pacific LLSVPs and the smaller Perm Anomaly beneath Eurasia">
+    </div>
+    <p class="caption">Fig. 1b, Flament et al. (2017).</p>
+
+    <p>
+        <a href="https://doi.org/10.1029/2018GL080387" target="_blank" rel="noopener">Ulvrov&aacute;, Brune &amp; Williams (2019, Geophysical Research Letters)</a>
+        ran global mantle convection models in which plate boundaries, continents and rifts all emerge
+        self-consistently, rather than being prescribed, to study how continents accelerate and decelerate as they
+        break apart. Continental rupture follows a characteristic four-phase evolution &mdash; slow initial rifting,
+        a sudden speed-up, fast breakup, and a deceleration &mdash; and that speed-up is compensated elsewhere on
+        the globe by subduction acceleration or even the initiation of new subduction zones. The panels below track
+        one modelled rift, in cross-section, through that full cycle.
+    </p>
+    <div class="media">
+        <img src="img/ulvrova2019-grl-fig1.png" alt="Grid of spherical annulus mantle convection snapshots showing the pre-rift, slow rifting, rift speed-up, break-up and drifting phases of a modelled continental rift, alongside close-ups of viscosity and stress">
+    </div>
+    <p class="caption">Fig. 1, Ulvrov&aacute; et al. (2019, GRL).</p>
+
+    <p>
+        <a href="https://doi.org/10.1016/j.epsl.2019.115836" target="_blank" rel="noopener">Ulvrov&aacute;, Coltice, Williams &amp; Tackley (2019, Earth and Planetary Science Letters)</a>
+        used the same style of self-consistent convection model to ask a statistical question: where, relative to
+        continents, does subduction actually initiate and cease? Subduction zones that are born next to a continent
+        tend to stay attached to it for their entire lifespan, while intra-oceanic subduction zones drift through
+        the ocean before usually dying close to a continental margin. The six snapshots below track one such
+        subduction zone retreating toward, then reversing polarity beside, a continental margin.
+    </p>
+    <div class="media">
+        <img src="img/ulvrova2019-epsl-fig2.png" alt="Six snapshots of a spherical annulus mantle convection model showing a subduction zone retreating toward a continental margin and then reversing polarity">
+    </div>
+    <p class="caption">Fig. 2, Ulvrov&aacute; et al. (2019, EPSL).</p>
+
+    <p>
+        <a href="https://doi.org/10.1038/s41586-022-04538-y" target="_blank" rel="noopener">Flament, Bodur, Williams &amp; Merdith (2022, Nature)</a>
+        reconstructed mantle flow back to one billion years ago to test whether the long-term correlation between
+        volcanic eruptions and the LLSVPs really requires those basal mantle structures to be fixed in place, as is
+        often assumed. It doesn't: mobile basal mantle structures explain the volcanic record just as well as
+        stationary ones. In the models, cold lithosphere sank into the African hemisphere between 740 and 500
+        million years ago, and the structure beneath Africa only assembled into the coherent shape we see today as
+        recently as 60 million years ago. The maps below compare the tomographically imaged structure (left) with
+        the mobile model prediction (right) at three points in time.
+    </p>
+    <div class="media">
+        <img src="img/flament2022-nature-fig1.png" alt="Six global maps comparing seismic tomography and a mobile mantle flow model of the African and Pacific LLSVPs, with reconstructed volcanic eruption locations, at present day, 160 Ma and 300 Ma">
+    </div>
+    <p class="caption">Fig. 1, Flament et al. (2022).</p>
+
+    <p>
+        <a href="https://doi.org/10.1038/s41561-024-01513-2" target="_blank" rel="noopener">Liu, Zhang, Ma, Williams, Lin, Wan, Ran &amp; Gurnis (2024, Nature Geoscience)</a>
+        built four-dimensional mantle flow models of the North China Craton since the late Mesozoic to work out what
+        actually drives the deformation, and eventual destruction, of ancient cratons. Flat-slab subduction of the
+        Pacific plate first shortened and thickened the craton's lithosphere; subsequent rollback of that same flat
+        slab then drove seaward extension and thinning, reshaping surface topography and basin sediments along the
+        way. The reconstructions below track the evolving subduction geometry and strain field beneath the craton
+        from 168 to 67 million years ago.
+    </p>
+    <div class="media">
+        <img src="img/liu2024-natgeosci-fig1bg.png" alt="Six reconstructed cross-sections of the deforming plate boundary beneath the North China Craton from 168 to 67 million years ago, coloured by dilatation strain rate">
+    </div>
+    <p class="caption">Fig. 1b&ndash;g, Liu et al. (2024).</p>
+
+    <h2>Explore the mantle</h2>
     <div class="embed-toolbar">
         <span class="embed-label">Geode — an interactive 3D mantle viewer, in development</span>
         <a class="btn" href="https://siwill22.github.io/Geode/" target="_blank" rel="noopener">Launch Geode ↗</a>
@@ -65,32 +152,14 @@
         runs the same reconstructed geography through 540 million years of surface temperature.
     </p>
 
-    <h2>Blobs that move</h2>
-    <p>
-        Two continent-sized piles of anomalous, hot rock (large low-shear-velocity provinces, or LLSVPs) sit at
-        the base of the mantle beneath Africa and the Pacific. They're the source of many hotspot volcanoes and
-        the plumes that carry diamonds to the surface. Reconstructing plate motions back a billion years and
-        combining that with mantle flow simulations shows these "blobs" are not fixed: they assemble and break
-        apart in a rhythm not unlike the way continents gather into supercontinents at the surface.
-    </p>
-
-    <h2>Basins, gateways and climate</h2>
-    <p>
-        The same plate motions that drive mantle flow also open and close ocean gateways and set the pace of
-        continental rifting. Both have long-term climate consequences, from the onset of the Antarctic
-        Circumpolar Current to the links between rifting, volcanic CO₂ degassing and past climate change. I've
-        also worked on the surface expression of these deep processes, including paleoelevation histories of
-        mountain belts like the Andes, reconstructed from igneous geochemistry
-        (<a href="https://github.com/siwill22/andes_paleoelevation" target="_blank" rel="noopener">andes_paleoelevation</a>).
-    </p>
-
     <div class="related">
         <h2>Related</h2>
         <ul>
-            <li><a href="https://siwill22.github.io/Geode/" target="_blank" rel="noopener">Geode</a> — interactive 3D mantle tomography viewer</li>
-            <li><a href="../../writing/">Volcanoes, diamonds, and blobs: a billion-year history of Earth's interior</a> — writing for a general audience</li>
-            <li><a href="https://github.com/siwill22/andes_paleoelevation" target="_blank" rel="noopener">andes_paleoelevation</a> — reconstructing ancient elevation from igneous geochemistry</li>
-            <li><a href="../plate-tectonics/">Plate tectonic reconstructions</a> — the surface boundary condition for these models</li>
+            <li><a href="../plate-tectonics/">Global plate tectonic reconstructions</a> &mdash; the surface boundary condition these mantle flow models are driven by</li>
+            <li><a href="../deep-time-earth-systems/">Deep time Earth systems</a> &mdash; plate tectonics and the rest of the Earth system</li>
+            <li><a href="../deep-time-analysis/">Deep time spatiotemporal analysis</a> &mdash; testing deep-time reconstructions against the geological record</li>
+            <li><a href="../../writing/">Volcanoes, diamonds, and blobs: a billion-year history of Earth's interior</a> &mdash; writing for a general audience</li>
+            <li><a href="../../people/">People</a> &mdash; collaborators behind these studies</li>
         </ul>
     </div>
 </main>

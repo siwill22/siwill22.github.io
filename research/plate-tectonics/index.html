@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plate Tectonic Reconstructions — Simon Williams</title>
-<meta name="description" content="Building full-plate, deep-time reconstructions of continents, ocean basins and plate boundaries with GPlates.">
+<title>Global Plate Tectonic Reconstructions — Simon Williams</title>
+<meta name="description" content="Building internally consistent global plate tectonic reconstructions, from continuous full-plate models spanning a billion years to seafloor age and continental deformation, with GPlates and the EarthByte Group.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
 <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
 <script src="/assets/js/theme.js" defer></script>
 <style>
-        h1 { font-size: 2.1em; margin-bottom: 14px; }
-    main { padding: 40px 0 60px; }
+    h1 { font-size: 2.1em; margin-bottom: 14px; }
+    main.wrap-narrow { padding-top: 72px; padding-bottom: 60px; }
     @media (max-width: 600px) { h1 { font-size: 1.7em; } }
 </style>
 </head>
@@ -21,13 +21,9 @@
 
 <header class="site narrow">
     <nav>
-        <a href="../../" class="brand">Simon Williams</a>
         <div class="navgroup">
-
             <a href="../../#research" class="back-link">&larr; Back to Research</a>
-
             <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
-
         </div>
     </nav>
 </header>
@@ -35,49 +31,56 @@
 <div class="page-head">
     <div class="wrap-narrow">
         <span class="eyebrow">Research</span>
-        <h1>Plate tectonic reconstructions</h1>
+        <h1>Global plate tectonic reconstructions</h1>
         <p class="lede">
-            Building full-plate, deep-time reconstructions of continents, ocean basins and plate boundaries, and
-            the open software that makes them usable by other scientists.
+            Building internally consistent models of where every plate boundary sat, from the present day back
+            through a billion years of tectonic history, with the open-source
+            <a href="https://www.gplates.org" target="_blank" rel="noopener">GPlates</a> software and the
+            <a href="https://www.earthbyte.org" target="_blank" rel="noopener">EarthByte Group</a>.
         </p>
     </div>
 </div>
 
 <main class="wrap-narrow">
-    <p>
-        A plate tectonic reconstruction is a model of where every continent, microcontinent and plate boundary sat
-        at any point in Earth's past. Building one that is internally consistent (where plates don't overlap or
-        tear apart in ways the geology doesn't support) is a large data-integration problem, combining
-        magnetic and gravity anomalies, geological mapping, paleomagnetic data and seafloor age constraints into a
-        single connected model of plate motion.
-    </p>
-    <p>
-        These "full-plate" models, which describe the motion of every plate boundary rather than just a handful of
-        major plates, are what let researchers in very different fields (paleobiology, paleoclimate, seismology,
-        geodynamics) work in a shared spatial and temporal frame, sometimes hundreds of millions or even a
-        billion years into the past.
-    </p>
 
-    <h2>GPlates &amp; EarthByte</h2>
     <p>
-        Much of this work happens through <a href="https://www.gplates.org" target="_blank" rel="noopener">GPlates</a>,
-        open-source desktop and Python software for building, visualising and querying plate reconstructions,
-        developed with the <a href="https://www.earthbyte.org" target="_blank" rel="noopener">EarthByte Group</a>
-        at the University of Sydney, where I was a Research Fellow for almost a decade. I contribute to GPlates and
-        the surrounding Python tooling (<code>pygplates</code>, and my own
-        <a href="https://github.com/siwill22/GPlatesReconstructionModel" target="_blank" rel="noopener">GPlatesReconstructionModel</a>
-        wrapper) that lets reconstructions be scripted and combined with other geospatial data rather than driven
-        only through a GUI. See also <a href="../../people/">people I work with</a>.
+        <a href="https://doi.org/10.1146/annurev-earth-060115-012211" target="_blank" rel="noopener">Müller et al. (2016, AREPS)</a>
+        pulled together decades of regional plate model work into the first internally consistent global model of
+        every plate boundary spanning the last 200 Myr, built as a continuously evolving topological network rather
+        than a fixed set of static polygons. Comparing rates and directions of separation across key plate pairs
+        along representative tectonic flowlines (Figure 8) makes it possible to tell which changes in spreading
+        behaviour are genuine global tectonic events, and which are just artefacts of individual regional models.
     </p>
+    <div class="media light">
+        <img src="img/muller2016-areps-fig8.png" alt="Globes and time-series plots showing divergence rate and direction along eight key tectonic flowlines, including North America-Greenland, Africa-South America, Africa-Antarctica, Australia-Antarctica, Pacific-Farallon and India relative to Madagascar, Antarctica and Australia">
+    </div>
+    <p class="caption">Figure 8, Müller et al. (2016).</p>
 
-    <h2>Seafloor age and lost ocean basins</h2>
     <p>
-        One direct output of a full-plate reconstruction is a map of seafloor age: how old the oceanic crust is
-        at every point on the seafloor, including in ocean basins that have since been entirely subducted and no
-        longer exist. The animation below steps a seafloor age grid forward through time, built automatically from
-        a topological plate reconstruction.
+        <a href="https://doi.org/10.1016/j.gr.2017.04.001" target="_blank" rel="noopener">Merdith et al. (2017, Gondwana Research)</a>
+        pushed a full-plate model back through the Neoproterozoic for the first time, linking the breakup of Rodinia
+        to the assembly of Gondwana using geological constraints on individual terranes rather than paleomagnetic
+        poles alone.
+        <a href="https://doi.org/10.1016/j.earscirev.2020.103477" target="_blank" rel="noopener">Merdith et al. (2021, Earth-Science Reviews)</a>
+        then joined that Neoproterozoic model seamlessly onto the younger Phanerozoic plate model, producing the
+        first continuous, self-consistent full-plate reconstruction spanning a billion years of Earth history.
+        Figure 17, from the 2021 paper, shows how the Arabian-Nubian Shield and the Azania and TOAST terranes were
+        progressively incorporated into Gondwana between 800 and 520 Ma.
     </p>
+    <div class="media">
+        <img src="img/merdith2021-esr-fig17.png" alt="Two globes showing the amalgamation of the Arabian-Nubian Shield, Azania and the TOAST terrane into Gondwana at 800 Ma and 520 Ma">
+    </div>
+    <p class="caption">Figure 17, Merdith et al. (2021).</p>
 
+    <p>
+        Reconstructing seafloor age is straightforward where the ocean floor still exists, but most seafloor older
+        than about 180 Myr has already been subducted.
+        <a href="https://doi.org/10.1016/j.gsf.2020.06.004" target="_blank" rel="noopener">Williams et al. (2021, Geoscience Frontiers)</a>
+        built an efficient workflow for reconstructing that missing seafloor age structure within a full-plate
+        model, and used it to explore a range of plausible age distributions in ocean basins that no longer exist.
+        The animation below steps a resulting seafloor age grid forward through geological time, generated
+        automatically from a topological plate reconstruction.
+    </p>
     <div class="media light">
         <img src="img/agegrid-animation.gif" alt="Animated seafloor age grid evolving through geological time">
     </div>
@@ -86,12 +89,27 @@
         <a href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">agegrid-0.1</a>.
     </p>
 
+    <p>
+        Treating every plate as perfectly rigid is a convenient simplification, but real continental margins
+        stretch, rift and shorten.
+        <a href="https://doi.org/10.1029/2018TC005462" target="_blank" rel="noopener">Müller et al. (2019, Tectonics)</a>
+        built the first global plate model to explicitly include that deformation, capturing the progressive
+        extension of continental margins since rifting began within Pangea around 240 Ma, along with major failed
+        rifts and zones of continental collision. The snapshot below, from 30 Ma, shows accumulated stretching
+        (blue) and shortening (red) along plate boundaries and deforming continental interiors worldwide.
+    </p>
+    <div class="media">
+        <img src="img/muller2019-deformation-30ma.png" alt="Global map at 30 Ma showing plate boundaries and accumulated continental extension (blue) and shortening (red) across deforming plate margins">
+    </div>
+    <p class="caption">Deforming plate model at 30 Ma, Müller et al. (2019).</p>
+
     <div class="related">
         <h2>Related</h2>
         <ul>
             <li><a href="https://github.com/siwill22/GPlatesReconstructionModel" target="_blank" rel="noopener">GPlatesReconstructionModel</a> — Python interface for scripted plate reconstructions</li>
             <li><a href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">agegrid-0.1</a> — reconstructing seafloor age, including in lost ocean basins</li>
             <li><a href="https://github.com/siwill22/Deconstructing-Plate-Tectonic-Reconstructions" target="_blank" rel="noopener">Deconstructing Plate Tectonic Reconstructions</a> — how these models are actually built, and what that means for interpreting them</li>
+            <li><a href="../absolute-plate-motions/">Absolute plate motions in deep time</a> — pinning these models to the Earth's deep interior</li>
             <li><a href="../../writing/">What are lost continents, and why are we discovering so many?</a> — writing for a general audience</li>
         </ul>
     </div>

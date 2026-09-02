@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Time Spatiotemporal Analysis — Simon Williams</title>
+<meta name="description" content="Testing what the geological record can and can't tell us about deep time, by combining big geochemical and geochronological databases with plate tectonic reconstructions in space and time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<script src="/assets/js/theme.js" defer></script>
+<style>
+    h1 { font-size: 2.1em; margin-bottom: 14px; }
+    main.wrap-narrow { padding-top: 72px; padding-bottom: 60px; }
+    @media (max-width: 600px) { h1 { font-size: 1.7em; } }
+</style>
+</head>
+<body>
+
+<header class="site narrow">
+    <nav>
+        <div class="navgroup">
+            <a href="../../#research" class="back-link">&larr; Back to Research</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
+        </div>
+    </nav>
+</header>
+
+<div class="page-head">
+    <div class="wrap-narrow">
+        <span class="eyebrow">Research</span>
+        <h1>Deep time spatiotemporal analysis</h1>
+        <p class="lede">
+            Testing what the geological record can and can't tell us about deep time, by combining big geochemical
+            and geochronological databases with plate tectonic reconstructions in space and time.
+        </p>
+    </div>
+</div>
+
+<main class="wrap-narrow">
+
+    <p>
+        <a href="https://doi.org/10.1017/S0016756818000110" target="_blank" rel="noopener">Cao et al. (2018, Geological Magazine)</a>
+        asked a simple question with a surprisingly fiddly answer: has the latitudinal distribution of climate-sensitive
+        rocks &mdash; coals, evaporites, glacial deposits &mdash; stayed the same through greenhouse and icehouse
+        Earth? Correcting for the uneven way continental area itself is distributed by latitude (there is far more
+        land near 60&deg; than near the equator) turns out to matter as much as the raw counts. The maps below step
+        that corrected record from 406 Ma to the present, plate motions and all.
+    </p>
+    <div class="media">
+        <img src="img/cao2018-geolmag-fig1.png" alt="Grid of 24 world maps from 406 Ma to the present day, showing the reconstructed locations of coal, evaporite and glacial deposits at each time step">
+    </div>
+    <p class="caption">Figure 1, Cao et al. (2018).</p>
+
+    <p>
+        <a href="https://doi.org/10.1029/2022JB024606" target="_blank" rel="noopener">Jian et al. (2022, JGR)</a>
+        trained a classifier to link the age spectrum of detrital zircons in a rock sample to the tectonic setting
+        it was deposited in &mdash; convergent, extensional, or neither &mdash; using a global zircon database and
+        full-plate reconstructions together, with roughly 70% success at picking out convergent settings.
+        <a href="https://doi.org/10.1016/j.precamres.2025.107680" target="_blank" rel="noopener">Jian et al. (2025, Precambrian Research)</a>
+        pushed that categorization back to 3.5 Ga, using it as an independent check on competing deep-time
+        reconstruction models: if a model's plate boundaries don't line up with where the zircon record says
+        convergence was happening, that's evidence against it. The maps below compare two alternative models at
+        550 Ma against the same categorized zircon samples.
+    </p>
+    <div class="media">
+        <img src="img/jian-zircon-reconstructions-fig3.png" alt="Two globes comparing categorized detrital zircon sample locations at 550 Ma under two alternative deep-time plate reconstruction models">
+    </div>
+    <p class="caption">From Figure 3, Jian et al. (2025).</p>
+
+    <p>
+        <a href="https://doi.org/10.1016/j.gr.2024.07.010" target="_blank" rel="noopener">Liu et al. (2024, Gondwana Research)</a>
+        mapped paleoelevation along the entire western margin of South America since the Late Paleozoic, using
+        geochemical signatures of magmatic rocks that correlate with the crustal thickness beneath them at the time
+        they erupted. Binning results in both space and time makes it possible to trace mountain building
+        sub-region by sub-region, and to test the results against independent paleotopography compilations built
+        from entirely different methods.
+    </p>
+    <div class="media">
+        <img src="img/liu2024-gr-fig6.png" alt="Grid of plots showing reconstructed paleoelevation through time for eleven sub-domains along the Andean margin of South America, each compared against an independent paleotopography model">
+    </div>
+    <p class="caption">Figure 6, Liu et al. (2024).</p>
+
+    <p>
+        <a href="https://doi.org/10.1029/2024JB030404" target="_blank" rel="noopener">Zhou et al. (2025, JGR)</a>
+        took a similar idea &mdash; inferring crustal thickness from igneous geochemistry &mdash; and rebuilt it as
+        a machine-learning "chemical mohometry" model, trained on geochemical data from present-day subduction
+        zones, collision orogens and intraplate settings alongside their known Moho depths. Applied to samples from
+        southern Tibet and the South China Block, the model's reconstructed crustal thickness through time tracks
+        known tectonic history closely, and highlights a correlation between anomalously thick ancient crust and
+        the location of porphyry ore deposits.
+    </p>
+    <div class="media">
+        <img src="img/zhou2025-crustal-thickness-trend.png" alt="Scatter plot of crustal thickness against age with a kernel ridge regression trend line and 95% confidence interval, showing oscillating crustal thickness through deep time">
+    </div>
+    <p class="caption">
+        Crustal thickness through time, modelled with the mohometry approach of Zhou et al. (2025) &mdash; generated
+        from the paper's accompanying code repository, rather than the published figure itself.
+    </p>
+
+    <p>
+        <a href="https://doi.org/10.1016/j.gsf.2026.102416" target="_blank" rel="noopener">Puetz et al. (2026, Geoscience Frontiers)</a>
+        is the broadest synthesis yet: global databases of cratons, orogens and igneous zircon samples, integrated
+        with recent full-plate paleogeographic reconstructions spanning 2 billion years. Positioning every one of
+        these datasets consistently in space and time reveals a strong correlation between convergent-setting
+        zircons and reconstructed subduction zones, and patterns consistent with the long-debated supercontinent
+        cycle. The map below reconstructs the Nuna supercontinent at 1600 Ma, with convergent (red) and extensional
+        (blue) zircon locations plotted against cratons and orogenic belts.
+    </p>
+    <div class="media">
+        <img src="img/puetz2026-gsf-fig2.png" alt="Paleogeographic reconstruction of the Nuna supercontinent at 1600 Ma, showing cratons, orogens, plate boundaries, and convergent and extensional zircon locations">
+    </div>
+    <p class="caption">Figure 2, Puetz et al. (2026).</p>
+
+    <div class="related">
+        <h2>Related</h2>
+        <ul>
+            <li><a href="../plate-tectonics/">Global plate tectonic reconstructions</a> &mdash; the full-plate models this record is tested against</li>
+            <li><a href="../geodynamics/">Deep time geodynamics</a> &mdash; connecting these deep-time patterns to mantle processes</li>
+            <li><a href="../../people/">People</a> &mdash; collaborators behind these studies</li>
+        </ul>
+    </div>
+</main>
+
+<footer class="site">
+    <div class="wrap">Simon Williams · Institute for Marine and Antarctic Studies, University of Tasmania</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absolute Plate Motions in Deep Time — Simon Williams</title>
+<meta name="description" content="How plate motions relative to the deep Earth are reconstructed and tested, from trench kinematics and seafloor spreading fabric to fully automated optimization back to 1 billion years ago.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<script src="/assets/js/theme.js" defer></script>
+<style>
+    h1 { font-size: 2.1em; margin-bottom: 14px; }
+    main.wrap-narrow { padding-top: 72px; padding-bottom: 60px; }
+    main video { display: block; width: 100%; height: auto; }
+    @media (max-width: 600px) { h1 { font-size: 1.7em; } }
+</style>
+</head>
+<body>
+
+<header class="site narrow">
+    <nav>
+        <div class="navgroup">
+            <a href="../../#research" class="back-link">&larr; Back to Research</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☆</button>
+        </div>
+    </nav>
+</header>
+
+<div class="page-head">
+    <div class="wrap-narrow">
+        <span class="eyebrow">Research</span>
+        <h1>Absolute plate motions in deep time</h1>
+        <p class="lede">
+            Plate reconstructions are usually built relative to another plate. Pinning them to the Earth's deep
+            interior instead &mdash; so a paleolongitude means something &mdash; is a much harder problem, with no
+            direct observation to check the answer against. This is a short history of how I've tried to constrain
+            and test that absolute reference frame.
+        </p>
+    </div>
+</div>
+
+<main class="wrap-narrow">
+
+    <p>
+        In <a href="https://doi.org/10.1016/j.epsl.2015.02.026" target="_blank" rel="noopener">Williams et al. (2015, EPSL)</a>,
+        we used subduction zone kinematics as an independent test of eight published absolute plate motion (APM)
+        models &mdash; hotspot tracks, tomographically mapped slab remnants, and no-net-rotation frames &mdash; by
+        computing the trench advance and retreat each implies since 130 Ma. Hotspot and slab-remnant frames agree
+        well for the last 70 Myr, but diverge sharply before that, where hotspot tracks are poorly constrained. The
+        slab-remnant and net-rotation-minimising frames instead give more consistent trench behaviour further back,
+        suggesting trench migration itself can be used as a criterion for building APM models deeper in time.
+    </p>
+    <div class="media">
+        <img src="img/williams2015-epsl-fig3.jpg" alt="Histograms of trench-normal velocity against age for eight different absolute plate motion reference frames, comparing trench advance and retreat behaviour since 130 Ma">
+    </div>
+    <p class="caption">Figure 3, Williams et al. (2015).</p>
+
+    <p>
+        <a href="https://doi.org/10.1002/2015GL067155" target="_blank" rel="noopener">Williams et al. (2016, GRL)</a>
+        approached the same problem from the opposite direction: rather than testing APM models against trenches, we
+        tested them against seafloor spreading itself. Fracture zones preserve the exact direction each mid-ocean
+        ridge was spreading in at the time crust formed &mdash; a record that has nothing to do with any assumed
+        absolute reference frame. We found a significant alignment between spreading direction and APM since the
+        Early Cretaceous, strongest for Atlantic ridges least influenced by slab pull, and weaker and more complex in
+        the Pacific, where the mismatch may trace back to a major plate&ndash;mantle reorganisation. Spreading
+        fabric turns out to be a genuinely independent constraint that can help improve APM models.
+    </p>
+    <div class="media">
+        <img src="img/williams2016-grl-fig3.png" alt="Histograms of the angular mismatch between paleospreading direction and absolute plate motion at spreading ridges, shown for the Atlantic, Indian and Pacific basins across a range of APM models">
+    </div>
+    <p class="caption">Figure 3, Williams et al. (2016).</p>
+
+    <p>
+        Testing existing APM models against independent data is one thing; building a model that is optimal by
+        construction is another.
+        <a href="https://doi.org/10.1029/2019JB017442" target="_blank" rel="noopener">Tetley et al. (2019, JGR)</a>
+        replaced the usual approach of fitting hotspot tracks or slab remnants in isolation with a single automated
+        optimisation: net rotation, trench migration and plate velocities are all minimised together, producing the
+        first fully self-consistent, objective global APM model since the Triassic.
+        <a href="https://doi.org/10.5194/se-13-1127-2022" target="_blank" rel="noopener">Müller et al. (2022, Solid Earth)</a>
+        pushed the same optimisation approach back to 1 billion years ago, combining it with paleomagnetic data and
+        tectonic rules tied to the assembly and breakup of supercontinents, to build the first continuous,
+        self-consistent plate motion and paleogeographic model spanning a billion years of Earth history. The
+        animation below is that optimisation stepping through deep time: plate boundaries (red = convergent, blue =
+        divergent) and the underlying net-rotation vector field, evolving together from 540 Ma to the present.
+    </p>
+    <div class="media">
+        <video src="img/apm-optimization.mp4" poster="img/apm-optimization-poster.jpg" autoplay loop muted playsinline controls></video>
+    </div>
+    <p class="caption">
+        The optimized absolute plate motion model stepping from 540 Ma to present, from
+        <a href="https://doi.org/10.1029/2019JB017442" target="_blank" rel="noopener">Tetley et al. (2019)</a> and
+        <a href="https://doi.org/10.5194/se-13-1127-2022" target="_blank" rel="noopener">Müller et al. (2022)</a>.
+    </p>
+
+    <div class="related">
+        <h2>Related</h2>
+        <ul>
+            <li><a href="../plate-tectonics/">Plate tectonic reconstructions</a> &mdash; the relative plate motion models this work is built on</li>
+            <li><a href="../geodynamics/">Deep time geodynamics</a> &mdash; what an absolute reference frame is ultimately for</li>
+            <li><a href="../../people/">People</a> &mdash; EarthByte and the collaborators behind these studies</li>
+        </ul>
+    </div>
+</main>
+
+<footer class="site">
+    <div class="wrap">Simon Williams · Institute for Marine and Antarctic Studies, University of Tasmania</div>
+</footer>
+
+</body>
+</html>
