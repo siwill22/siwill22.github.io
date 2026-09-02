@@ -2,10 +2,10 @@
  * Shared design system for siwill22.github.io.
  *
  * De Stijl / early-modernist palette and type: paper background, black
- * rules and sharp corners throughout (no border-radius, no soft shadows),
- * three aurora colours sampled from the AusMIS logo standing in for
- * Mondrian's red/yellow/blue. Jost is a free geometric sans built in the
- * spirit of 1920s-30s faces like Futura and Kabel.
+ * rules, sharp corners, plain borders. Three aurora colours sampled from
+ * the AusMIS logo standing in for Mondrian's red/yellow/blue. Jost is a
+ * free geometric sans built in the spirit of 1920s-30s faces like Futura
+ * and Kabel.
  *
  * --ink/--paper are the two poles of the theme and flip between light and
  * dark mode (see the prefers-color-scheme block below); --fill-light and
@@ -35,11 +35,6 @@
     --rule-thick: 6px;
 
     --font: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-
-    /* a single wobbly line, tiled, used to "hand-ink" straight rules --
-       colour comes from mask-image consumers setting background-color, not
-       from this SVG, so it stays correct in both themes without a second copy */
-    --wave-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='20'%3E%3Cpath d='M0 11 C 34 3, 58 18, 96 10 C 126 4, 150 15, 188 11 C 214 8, 232 17, 266 9 C 292 3, 310 14, 340 10' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* Dark mode: automatic from the OS/browser unless overridden by the toggle
@@ -77,37 +72,18 @@ a:hover { color: var(--ink); }
 .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
 .wrap-narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
 
-/* hand-inked rules ----------------------------------------------------
-   Anywhere a straight solid border used to sit, a pseudo-element now masks
-   a solid ink fill with --wave-mask instead, so the line reads as drawn,
-   not ruled. Thickness is just the pseudo's own height -- the same SVG
-   scales to fit, so one wave serves both weights. */
-header.site, footer.site, section, .related, .page-head {
-    position: relative;
-}
-header.site::after, footer.site::before, section::after,
-.related::before, .page-head::after {
-    content: ""; position: absolute; left: -6px; right: -6px;
-    background-color: var(--ink);
-    -webkit-mask-image: var(--wave-mask); mask-image: var(--wave-mask);
-    -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
-    -webkit-mask-size: 340px 100%; mask-size: 340px 100%;
-    pointer-events: none;
-}
-header.site::after, footer.site::before, .page-head::after { height: 15px; }
-header.site::after { bottom: -8px; }
-footer.site::before { top: -8px; }
-.page-head::after { bottom: -8px; }
-section::after, .related::before { height: 8px; }
-section::after { bottom: -5px; }
-section:last-of-type::after { display: none; }
-.related::before { top: -5px; }
+/* rules ------------------------------------------------------------------
+   Plain solid borders between the fixed sections of a page. */
+header.site { border-bottom: var(--rule) solid var(--ink); }
+footer.site { border-top: var(--rule) solid var(--ink); }
+.page-head { border-bottom: var(--rule) solid var(--ink); }
+section + section { border-top: var(--rule) solid var(--ink); }
+.related { border-top: var(--rule) solid var(--ink); }
 
 /* nav ---------------------------------------------------------------- */
 header.site {
     position: sticky; top: 0; z-index: 20;
     background: var(--paper);
-    border-bottom: none;
 }
 header.site nav {
     max-width: 980px; margin: 0 auto; padding: 16px 24px;
@@ -133,7 +109,6 @@ header.site.narrow nav { max-width: 780px; }
     background: none; border: none; color: var(--ink); cursor: pointer;
     width: 34px; height: 34px; font-size: 1.05em; line-height: 1;
     display: inline-flex; align-items: center; justify-content: center;
-    border-radius: 50%;
     flex: none;
 }
 .theme-toggle:hover { background: var(--paper-alt); }
@@ -151,15 +126,9 @@ h1.name {
     font-size: 2.6em; margin-bottom: 18px; line-height: 1.05;
     font-weight: 600; letter-spacing: 0; text-transform: none;
 }
-h1.name .w1 { color: color-mix(in srgb, var(--violet) 55%, var(--ink) 45%); }
-h1.name .w2 { color: color-mix(in srgb, var(--green) 55%, var(--ink) 45%); }
 h1.name::after {
-    content: ""; display: block; width: 210px; height: 7px; margin-top: 12px;
-    background: linear-gradient(to right,
-        var(--violet) 0 22%, var(--paper) 22% 26%,
-        var(--green) 26% 58%, var(--paper) 58% 62%,
-        var(--indigo) 62% 100%);
-    opacity: 0.8;
+    content: ""; display: block; width: 160px; height: 4px; margin-top: 12px;
+    background: var(--accent);
 }
 .title-line { color: var(--ink-soft); font-size: 1.2em; margin-bottom: 4px; }
 .affil-line { color: var(--ink-soft); font-size: 1.05em; margin-bottom: 22px; }
@@ -170,40 +139,11 @@ h1.name::after {
 
 .page-head { padding: 56px 0 32px; }
 
-/* hand-drawn boxes -------------------------------------------------------
-   Cards, buttons and media frames get a sketched double outline instead of
-   a ruled one: an irregular border-radius breaks up the right angles, a
-   solid ::before traces the "real" edge and a fainter, slightly rotated
-   ::after echoes it a couple of pixels off, the way a pen retraces a line
-   that didn't come out straight the first time. */
-.card, .btn, .media, .embed-poster {
-    position: relative;
-    border: none;
-}
-.card::before, .btn::before, .media::before, .embed-poster::before,
-.card::after, .btn::after, .media::after, .embed-poster::after {
-    content: ""; position: absolute; inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-}
-.card::before, .btn::before, .media::before, .embed-poster::before {
+/* cards, buttons, media frames -------------------------------------------
+   One plain border, no radius, no rotation. Same treatment everywhere. */
+.card, .btn, .media, .embed-poster, .hero-map {
     border: var(--rule) solid var(--ink);
 }
-.card::after, .btn::after, .media::after, .embed-poster::after {
-    inset: 2px;
-    border: 1.5px solid var(--ink);
-    opacity: 0.5;
-    transform: rotate(-0.5deg);
-}
-
-.card { border-radius: 3px 16px 4px 20px / 14px 3px 20px 4px; }
-.grid .card:nth-of-type(4n+1) { border-radius: 3px 16px 4px 20px / 14px 3px 20px 4px; transform: rotate(-0.3deg); filter: brightness(1.02); }
-.grid .card:nth-of-type(4n+2) { border-radius: 20px 4px 22px 3px / 3px 20px 3px 16px; transform: rotate(0.35deg); filter: brightness(0.97); }
-.grid .card:nth-of-type(4n+3) { border-radius: 4px 20px 3px 18px / 18px 3px 16px 4px; transform: rotate(-0.4deg); filter: brightness(1.04); }
-.grid .card:nth-of-type(4n)   { border-radius: 18px 3px 20px 4px / 4px 18px 4px 22px; transform: rotate(0.25deg); filter: brightness(0.99); }
-
-.btn { border-radius: 4px 12px 4px 12px / 10px 4px 12px 4px; }
-.media, .embed-poster { border-radius: 3px 10px 3px 10px / 8px 3px 10px 3px; }
 
 /* buttons ---------------------------------------------------------------*/
 .btnrow { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -212,7 +152,6 @@ h1.name::after {
     padding: 10px 18px; text-decoration: none;
     font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600;
     color: var(--ink); background: var(--paper);
-    transition: transform 0.1s;
 }
 .btn:hover { background: var(--ink); color: var(--paper); }
 .btn.primary { background: var(--violet); color: var(--fill-light); }
@@ -259,7 +198,7 @@ main p { margin-bottom: 18px; color: var(--ink); }
 
 /* media / captions ------------------------------------------------------*/
 .media { margin: 28px 0; overflow: hidden; }
-.media img, .media svg { display: block; width: 100%; height: auto; }
+.media img, .media svg, .media video { display: block; width: 100%; height: auto; }
 .media.light { background: var(--paper-alt); padding: 10px; }
 .caption { color: var(--ink-soft); font-size: 0.85em; margin-top: 8px; margin-bottom: 18px; }
 .caption a { color: var(--ink-soft); text-decoration: underline; }
@@ -270,17 +209,16 @@ main p { margin-bottom: 18px; color: var(--ink); }
 }
 .embed-toolbar .embed-label { color: var(--ink-soft); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.03em; }
 .embed-poster {
-    display: block; margin-top: 12px;
+    display: block; margin-top: 12px; position: relative;
     overflow: hidden;
 }
 .embed-poster img { display: block; width: 100%; height: auto; }
 .embed-poster .launch-hint {
     position: absolute; inset: auto 0 0 0; padding: 10px 16px;
-    background: linear-gradient(to top, rgba(20,19,26,0.92), transparent);
-    color: var(--fill-light); font-size: 0.85em; opacity: 0; transition: opacity 0.15s;
+    background: var(--ink); opacity: 0.85;
+    color: var(--fill-light); font-size: 0.85em;
     display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.03em;
 }
-.embed-poster:hover .launch-hint { opacity: 1; }
 
 /* related / lists -------------------------------------------------------*/
 .related { margin-top: 44px; padding-top: 30px; }

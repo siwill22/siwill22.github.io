@@ -13,35 +13,35 @@
 <script src="/assets/js/theme.js" defer></script>
 <style>
     .hero {
-        position: relative;
-        padding: 56px 0 0;
-    }
-    .hero::after {
-        content: ""; position: absolute; left: -6px; right: -6px; bottom: -8px; height: 15px;
-        background-color: var(--ink);
-        -webkit-mask-image: var(--wave-mask); mask-image: var(--wave-mask);
-        -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
-        -webkit-mask-size: 340px 100%; mask-size: 340px 100%;
-        pointer-events: none;
+        padding: 56px 0;
+        border-bottom: var(--rule) solid var(--ink);
     }
     .hero-grid {
         display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center;
-        padding-bottom: 40px;
     }
-    .hero-map {
-        position: relative; align-self: start;
-        border-radius: 4px 18px 3px 22px / 16px 4px 20px 3px;
-        overflow: hidden;
-    }
-    .hero-map::before, .hero-map::after {
-        content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-    }
-    .hero-map::before { border: var(--rule) solid var(--ink); }
-    .hero-map::after { inset: 2px; border: 1.5px solid var(--ink); opacity: 0.5; transform: rotate(0.5deg); }
+    .hero-map { align-self: start; overflow: hidden; }
     .hero-map img { display: block; width: 100%; height: auto; }
     @media (max-width: 860px) {
         .hero-grid { grid-template-columns: 1fr; }
         .hero-map { order: -1; }
+    }
+
+    /* Mondrian rows: hand-set width ratios instead of a uniform grid, so
+       boxes read as an irregular composition rather than a repeated tile.
+       .block is an empty coloured (or blank) rectangle -- filler, not content. */
+    .mrow { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+    .mrow:first-of-type { margin-top: 0; }
+    .mrow > .card, .mrow > .block { min-width: 220px; }
+    .w1 { flex: 1 1 0; }
+    .w2 { flex: 2 1 0; }
+    .w3 { flex: 3 1 0; }
+    .block { border: var(--rule) solid var(--ink); min-height: 80px; }
+    .fill-violet { background: var(--violet); }
+    .fill-green { background: var(--green); }
+    .fill-indigo { background: var(--indigo); }
+    .fill-paper-alt { background: var(--paper-alt); }
+    @media (max-width: 600px) {
+        .block { display: none; }
     }
 </style>
 </head>
@@ -66,7 +66,7 @@
     <div class="wrap hero-grid">
         <div>
             <span class="eyebrow">Institute for Marine and Antarctic Studies</span>
-            <h1 class="name"><span class="w1">Simon</span> <span class="w2">Williams</span></h1>
+            <h1 class="name">Simon Williams</h1>
             <div class="title-line">Associate Professor &amp; ARC Future Fellow</div>
             <div class="affil-line">
                 <a href="https://www.utas.edu.au/imas" target="_blank" rel="noopener">IMAS</a>, University of Tasmania · Hobart, Australia
@@ -95,8 +95,8 @@
     <div class="wrap">
         <h2 class="section-title">Projects</h2>
         <p class="section-sub">A mix of research infrastructure, outreach and (occasionally) games.</p>
-        <div class="grid">
-            <div class="card">
+        <div class="mrow">
+            <div class="card w2">
                 <span class="tag swatch-green">Active · 2024–2026</span>
                 <h3>AusMIS — Australian Magnetometers in Schools</h3>
                 <p>
@@ -107,7 +107,10 @@
                 <a class="card-link" href="https://github.com/AusMIS" target="_blank" rel="noopener">GitHub org →</a>
                 <a class="card-link" href="https://www.auscope.org.au/projects/magnetometers-in-schools" target="_blank" rel="noopener" style="margin-left:14px;">AuScope project page →</a>
             </div>
-            <div class="card">
+            <div class="block fill-violet" aria-hidden="true"></div>
+        </div>
+        <div class="mrow">
+            <div class="card w3">
                 <span class="tag swatch-violet">Fellowship · 2023–2027</span>
                 <h3>The magnetisation of Earth's lithosphere — a new view from space</h3>
                 <p>
@@ -117,7 +120,7 @@
                     beneath the Antarctic ice sheet.
                 </p>
             </div>
-            <div class="card">
+            <div class="card w3">
                 <span class="tag swatch-indigo">Voyage · 2027–2028</span>
                 <h3>Tectonic and volcanic evolution of Australia's northwest margin</h3>
                 <p>
@@ -126,7 +129,7 @@
                     seafloor that is still poorly sampled and whose origins remain disputed.
                 </p>
             </div>
-            <div class="card">
+            <div class="card w2">
                 <span class="tag">For fun</span>
                 <h3>Ocean Exploration Games</h3>
                 <p>
@@ -146,8 +149,8 @@
             My work spans plate tectonics, marine geophysics and geodynamics: reconstructing the past to help
             explain the geology, oceans and climate of the present.
         </p>
-        <div class="grid">
-            <div class="card">
+        <div class="mrow">
+            <div class="card w3">
                 <h3>Global plate tectonic reconstructions</h3>
                 <p>
                     Building internally consistent, deep-time reconstructions of continents, ocean basins and plate
@@ -156,7 +159,7 @@
                 </p>
                 <a class="card-link" href="research/plate-tectonics/">Learn more →</a>
             </div>
-            <div class="card">
+            <div class="card w2">
                 <h3>Absolute plate motions in deep time</h3>
                 <p>
                     Testing and building the reference frame that pins plate motions to the Earth's deep interior,
@@ -165,7 +168,9 @@
                 </p>
                 <a class="card-link" href="research/absolute-plate-motions/">Learn more →</a>
             </div>
-            <div class="card">
+        </div>
+        <div class="mrow">
+            <div class="card w2">
                 <h3>Australia, Antarctica &amp; Gondwana</h3>
                 <p>
                     Reconstructing the breakup of Australia, Antarctica and their neighbouring microcontinents and
@@ -174,7 +179,7 @@
                 </p>
                 <a class="card-link" href="research/australia-antarctica-gondwana/">Learn more →</a>
             </div>
-            <div class="card">
+            <div class="card w2">
                 <h3>Marine geophysics</h3>
                 <p>
                     Collecting and analysing gravity, magnetic and bathymetric data at sea aboard national research
@@ -182,7 +187,10 @@
                 </p>
                 <a class="card-link" href="research/marine-geophysics/">Learn more →</a>
             </div>
-            <div class="card">
+            <div class="block fill-indigo w1" aria-hidden="true"></div>
+        </div>
+        <div class="mrow">
+            <div class="card w1">
                 <h3>Planetary structure from satellite data</h3>
                 <p>
                     Imaging subduction zones, oceanic lithosphere and the crust of Mars from orbit, using satellite
@@ -190,7 +198,7 @@
                 </p>
                 <a class="card-link" href="research/satellite-magnetics/">Learn more →</a>
             </div>
-            <div class="card">
+            <div class="card w2">
                 <h3>Deep time spatiotemporal analysis</h3>
                 <p>
                     Combining big geochemical and geochronological databases with plate tectonic reconstructions to
@@ -198,15 +206,17 @@
                 </p>
                 <a class="card-link" href="research/deep-time-analysis/">Learn more →</a>
             </div>
-            <div class="card">
+            <div class="card w1">
                 <h3>Deep time Earth systems</h3>
                 <p>
-                    Linking plate tectonics to the rest of the Earth system &mdash; ocean gateways, mountain
-                    building and volcanic arcs &mdash; and their long-term influence on climate.
+                    Linking plate tectonics to the rest of the Earth system (ocean gateways, mountain building
+                    and volcanic arcs) and their long-term influence on climate.
                 </p>
                 <a class="card-link" href="research/deep-time-earth-systems/">Learn more →</a>
             </div>
-            <div class="card">
+        </div>
+        <div class="mrow">
+            <div class="card w1">
                 <h3>Deep time geodynamics</h3>
                 <p>
                     Connecting plate motions to mantle convection, hotspot volcanism and the deep Earth, and their
@@ -214,6 +224,7 @@
                 </p>
                 <a class="card-link" href="research/geodynamics/">Learn more →</a>
             </div>
+            <div class="block fill-paper-alt w2" aria-hidden="true"></div>
         </div>
     </div>
 </section>
@@ -226,8 +237,8 @@
             Most of it lives on <a href="https://github.com/siwill22" target="_blank" rel="noopener">GitHub</a>:
             reconstruction infrastructure, notebooks that reproduce published figures, and a few experiments.
         </p>
-        <div class="grid">
-            <div class="card">
+        <div class="mrow">
+            <div class="card w2">
                 <h3>GPlatesReconstructionModel</h3>
                 <p>
                     A Python class wrapping GPlates plate reconstructions, so reconstructions can be scripted and
@@ -235,7 +246,7 @@
                 </p>
                 <a class="card-link" href="https://github.com/siwill22/GPlatesReconstructionModel" target="_blank" rel="noopener">Repository →</a>
             </div>
-            <div class="card">
+            <div class="card w2">
                 <h3>curiesphere</h3>
                 <p>
                     Models the magnetization of Earth's lithosphere using vector spherical harmonics, built to
@@ -243,31 +254,10 @@
                 </p>
                 <a class="card-link" href="https://github.com/siwill22/curiesphere" target="_blank" rel="noopener">Repository →</a>
             </div>
-            <div class="card">
-                <h3>agegrid-0.1</h3>
-                <p>
-                    Automated workflow that turns topological plate reconstructions into seafloor age grids,
-                    including for ocean basins that no longer exist.
-                </p>
-                <a class="card-link" href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">Repository →</a>
-            </div>
-            <div class="card">
-                <h3>AbFab</h3>
-                <p>
-                    Generates synthetic abyssal hill seafloor fabric from spreading rate and crustal age. Also an
-                    experiment in using Claude Code to write research software.
-                </p>
-                <a class="card-link" href="https://github.com/siwill22/AbFab" target="_blank" rel="noopener">Repository →</a>
-            </div>
-            <div class="card">
-                <h3>andes_paleoelevation</h3>
-                <p>
-                    Reconstructs ancient elevation along the Andes from igneous geochemistry, implementing three
-                    published paleoelevation calibration methods.
-                </p>
-                <a class="card-link" href="https://github.com/siwill22/andes_paleoelevation" target="_blank" rel="noopener">Repository →</a>
-            </div>
-            <div class="card">
+            <div class="block fill-green w1" aria-hidden="true"></div>
+        </div>
+        <div class="mrow">
+            <div class="card w3">
                 <h3>Deconstructing Plate Tectonic Reconstructions</h3>
                 <p>
                     Code and figures behind a <em>Nature Reviews Earth &amp; Environment</em> paper examining how
@@ -275,7 +265,33 @@
                 </p>
                 <a class="card-link" href="https://github.com/siwill22/Deconstructing-Plate-Tectonic-Reconstructions" target="_blank" rel="noopener">Repository →</a>
             </div>
-            <div class="card">
+            <div class="card w2">
+                <h3>agegrid-0.1</h3>
+                <p>
+                    Automated workflow that turns topological plate reconstructions into seafloor age grids,
+                    including for ocean basins that no longer exist.
+                </p>
+                <a class="card-link" href="https://github.com/siwill22/agegrid-0.1" target="_blank" rel="noopener">Repository →</a>
+            </div>
+        </div>
+        <div class="mrow">
+            <div class="card w1">
+                <h3>AbFab</h3>
+                <p>
+                    Generates synthetic abyssal hill seafloor fabric from spreading rate and crustal age. Also an
+                    experiment in using Claude Code to write research software.
+                </p>
+                <a class="card-link" href="https://github.com/siwill22/AbFab" target="_blank" rel="noopener">Repository →</a>
+            </div>
+            <div class="card w1">
+                <h3>andes_paleoelevation</h3>
+                <p>
+                    Reconstructs ancient elevation along the Andes from igneous geochemistry, implementing three
+                    published paleoelevation calibration methods.
+                </p>
+                <a class="card-link" href="https://github.com/siwill22/andes_paleoelevation" target="_blank" rel="noopener">Repository →</a>
+            </div>
+            <div class="card w1">
                 <h3>2019 Subduction History</h3>
                 <p>
                     Notebooks reproducing an analysis of where and when subduction zones have been born and died
