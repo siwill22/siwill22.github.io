@@ -91,6 +91,9 @@ header.site nav {
     gap: 16px; flex-wrap: wrap;
 }
 header.site.narrow nav { max-width: 780px; }
+.logo-link { display: block; flex: none; line-height: 0; }
+.site-logo { display: block; width: 51px; height: 51px; }
+.logo-link:hover .site-logo { opacity: 0.8; }
 .navlinks { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 .navgroup { display: flex; align-items: center; gap: 12px; }
 .navlinks a {
